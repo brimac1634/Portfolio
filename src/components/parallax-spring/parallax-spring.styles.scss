@@ -1,0 +1,34 @@
+.parallax-spring {
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 30%;
+	display: flex;
+
+	.moon {
+		position: absolute;
+		left: 100px;
+		top: 50%;
+		transform: translate(0, -50%);
+		width: 120px;
+		height: 120px;
+		background-color: var(--white);
+		box-shadow: 0 0 40px 5px var(--white);
+		border-radius: 50%;
+
+	}
+
+	.particle {
+		content: "";
+		width: 3px;
+		height: 3px;
+		border-radius: 50%;
+		background: var(--white);
+		position: absolute;
+		will-change: transform;
+		top: 0;
+		left: 0;
+	}
+}

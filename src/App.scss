@@ -1,0 +1,39 @@
+:root {
+  --background: #272343;
+  --green: #e3f6f5;
+  --blue: #bae8e8;
+  --white: #f7f9fc;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  background: linear-gradient(90deg, #000 1px, transparent 1px) 1px 0, var(--background);
+  background-size: 20% 1px;
+}
+
+body {
+  height: 100%;
+  color: var(--white);
+  overflow-x: hidden;
+  font-family: 'Inconsolata', monospace;
+  letter-spacing: 1.5px;
+}
+
+h1, h2, h3 {
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 4px;
+  font-weight: 100;
+  color: var(--blue);
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 8em;
+}
