@@ -12,14 +12,11 @@
 }
 
 html {
-  height: 100%;
-  background-attachment: fixed;
-  background-size: cover;
   background: var(--color2);
 }
 
 body {
-  height: 100%;
+  overflow-y: auto;
   color: var(--white);
   overflow-x: hidden;
   font-family: 'Inconsolata', monospace;

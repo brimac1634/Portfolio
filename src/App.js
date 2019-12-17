@@ -7,6 +7,8 @@ import Footer from './components/footer/footer.component';
 import Loader from './components/loader/loader.component';
 // import ParallaxSpring from './components/parallax-spring/parallax-spring.component';
 import Home from './pages/home/home.component';
+import Work from './pages/work/work.component';
+import About from './pages/about/about.component';
 
 import './App.scss';
 
@@ -17,6 +19,8 @@ const App = () => {
         <Suspense fallback={<Loader />}>
           <Switch>
               <Route exact path='/' component={Home}/>
+              <Route path='/work' component={Work}/>
+              <Route path='/about' component={About}/>
               <Redirect to='/' />
           </Switch>
         </Suspense>

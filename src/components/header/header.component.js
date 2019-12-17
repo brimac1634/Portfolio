@@ -7,10 +7,10 @@ import './header.styles.scss';
 
 const Header = () => (
 	<div className='header'>
-		<div className='name'>
+		<Link to='/' className='name'>
 			<span>BRIAN</span>
 			<span>MACPHERSON</span>
-		</div>
+		</Link>
 		<a 
 			className='action-button'
 			href='mailto:brimac1634@gmail.com' 
