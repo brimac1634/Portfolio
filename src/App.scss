@@ -1,8 +1,9 @@
 :root {
-  --background: #272343;
-  --green: #e3f6f5;
-  --blue: #bae8e8;
-  --white: #f7f9fc;
+  --color1: rgba(63, 59, 89, 0.8);
+  --color2: #272343;
+  --color3: rgb(74, 24, 93);
+  --color4: rgb(162, 125, 87);
+  --color5: rgb(235, 65, 46);
 }
 
 
@@ -14,8 +15,7 @@ html {
   height: 100%;
   background-attachment: fixed;
   background-size: cover;
-  background: linear-gradient(90deg, #000 1px, transparent 1px) 1px 0, var(--background);
-  background-size: 20% 1px;
+  background: var(--color2);
 }
 
 body {
@@ -27,13 +27,27 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Exo 2', sans-serif;
   letter-spacing: 4px;
   font-weight: 100;
   color: var(--blue);
 }
 
 h1 {
-  font-weight: 600;
-  font-size: 8em;
+  font-weight: 500;
+  font-size: 10em;
+  margin: 0;
+}
+
+a {
+  font-family: 'Exo 2', sans-serif;
+  outline: none;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    color: var(--color4);
+  }
 }

@@ -6,12 +6,8 @@ import './home.styles.scss';
 const Home = () => {
 	return (
 		<div className='home'>
+			<div className='side-panel' />
 			<Parallax className='name' y={['-200px', '200px']}>
-				<h1>Hello,</h1>
-		        <h1>I'm Brian</h1>
-		    </Parallax>
-		    <Parallax className='other' y={['-20px', '20px']} tagOuter="figure">
-				<h1>Hello,</h1>
 		    </Parallax>
 		</div>
 	)
