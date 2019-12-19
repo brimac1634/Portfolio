@@ -4,7 +4,7 @@
 
 	@media screen and (max-width: 991px) {
 		width: 88%;
-		margin: 15% auto 0 auto;
+		margin: 150px auto 0 auto;
 	}
 
 	.work-collection {
@@ -20,12 +20,41 @@
 		grid-column-gap: 0.8em;
 		grid-row-gap: 0.8em;
 
+		@media screen and (max-width: 575px) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(8, 1fr);
+			grid-template-areas: 
+				"spent spent"
+				"spent spent"
+				"too too"
+				"too too"
+				"tele wechat"
+				"tele wechat"
+				"bon bon"
+				"bon bon";
+		}
+
 		&::before {
 		  content: '';
 		  width: 0;
 		  padding-bottom: 100%;
 		  grid-row: 1 / 1;
 		  grid-column: 1 / 1;
+		}
+
+		> * {
+			opacity: 0;
+			animation: fade-in 1000ms ease-out;
+			animation-fill-mode: forwards;
+
+			@keyframes drop-fade {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
 		}
 	}
 }

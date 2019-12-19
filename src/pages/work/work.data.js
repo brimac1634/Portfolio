@@ -14,18 +14,18 @@ export default [
 		route: '/TooFarEastBarber'
 	},
 	{
-		title: 'Bon Vivant',
-		description: 'Retail Website',
-		image: require("../../assets/cover.jpg"),
-		gridArea: 'bon',
-		route: '/BonVivantCollection'
-	},
-	{
 		title: 'NRS Teleprompter',
 		description: 'Tablet + Mobile App',
 		image: require("../../assets/cover.jpg"),
 		gridArea: 'tele',
 		route: '/NetRoadshowTeleprompter'
+	},
+	{
+		title: 'Bon Vivant',
+		description: 'Retail Website',
+		image: require("../../assets/cover.jpg"),
+		gridArea: 'bon',
+		route: '/BonVivantCollection'
 	},
 	{
 		title: 'NRS Miniprogram',

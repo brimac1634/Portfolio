@@ -19,18 +19,19 @@ const Work = ({ match, history }) => (
 						<div className='work-collection'>
 							{
 								workData &&
-								workData.map(({ route, gridArea, image, title, description}) => {
-									return (
-										<WorkItem 
-											key={title}
-											onClick={()=>history.push(`${match.path}${route}`)}
-											style={{gridArea: gridArea}}
-											image={image} 
-											title={title} 
-											description={description} 
-										/>
-								)
-								})
+								workData.map(({ route, gridArea, image, title, description}, i) => (
+									<WorkItem 
+										key={title}
+										onClick={()=>history.push(`${match.path}${route}`)}
+										style={{
+											gridArea: gridArea,
+											animationDelay: `${i * 0.2}s`
+										}}
+										image={image} 
+										title={title} 
+										description={description} 
+									/>
+								))
 							}
 						</div>
 					)}/>
