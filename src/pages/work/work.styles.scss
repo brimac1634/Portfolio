@@ -1,9 +1,10 @@
 .work {
-	width: 100%;
-	padding: 150px 300px;
+	width: 65%;
+	margin: 5% auto;
 
 	@media screen and (max-width: 991px) {
-		padding: 150px 47px 0 47px;
+		width: 88%;
+		margin: 15% auto 0 auto;
 	}
 
 	.work-collection {
@@ -19,8 +20,12 @@
 		grid-column-gap: 0.8em;
 		grid-row-gap: 0.8em;
 
-		.box {
-			min-height: 600px;
+		&::before {
+		  content: '';
+		  width: 0;
+		  padding-bottom: 100%;
+		  grid-row: 1 / 1;
+		  grid-column: 1 / 1;
 		}
 	}
 }

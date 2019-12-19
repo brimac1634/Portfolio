@@ -9,7 +9,8 @@ const Header = () => (
 	<div className='header'>
 		<Link to='/' className='name'>
 			<span>BRIAN</span>
-			<span>MACPHERSON</span>
+			<span>MAC</span>
+			<span>PHERSON</span>
 		</Link>
 		<a 
 			className='action-button'

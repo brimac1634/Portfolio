@@ -21,18 +21,14 @@ const Work = ({ match, history }) => (
 								workData &&
 								workData.map(({ route, gridArea, image, title, description}) => {
 									return (
-									<div 
-										key={title}
-										onClick={()=>history.push(`${match.path}${route}`)}
-										className='box' 
-										style={{gridArea: gridArea}}
-									>
 										<WorkItem 
+											key={title}
+											onClick={()=>history.push(`${match.path}${route}`)}
+											style={{gridArea: gridArea}}
 											image={image} 
 											title={title} 
 											description={description} 
 										/>
-									</div>
 								)
 								})
 							}
