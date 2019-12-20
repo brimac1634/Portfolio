@@ -2,19 +2,19 @@ export default [
 	{
 		title: 'SpentAll',
 		description: 'Web App',
-		image: require("../../assets/cover.jpg"),
+		image: require("../../assets/SpentAll.gif"),
 		gridArea: 'spent',
 		route: '/SpentAll'
 	},
 	{
 		title: 'Too Far East',
 		description: 'Website',
-		image: require("../../assets/cover.jpg"),
+		image: require("../../assets/TFE.gif"),
 		gridArea: 'too',
 		route: '/TooFarEastBarber'
 	},
 	{
-		title: 'NRS Teleprompter',
+		title: 'NRS Tele',
 		description: 'Tablet + Mobile App',
 		image: require("../../assets/cover.jpg"),
 		gridArea: 'tele',
@@ -28,9 +28,9 @@ export default [
 		route: '/BonVivantCollection'
 	},
 	{
-		title: 'NRS Miniprogram',
+		title: 'NRS Mini',
 		description: 'Wechat Miniprogram',
-		image: require("../../assets/cover.jpg"),
+		image: require("../../assets/Mini.gif"),
 		gridArea: 'wechat',
 		route: '/NetRoadshowMiniprogram'
 	},

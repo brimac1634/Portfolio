@@ -25,7 +25,7 @@ const Work = ({ match, history }) => (
 										onClick={()=>history.push(`${match.path}${route}`)}
 										style={{
 											gridArea: gridArea,
-											animationDelay: `${i * 0.2}s`
+											animationDelay: `${(i + 1) * 0.2}s`
 										}}
 										image={image} 
 										title={title} 
