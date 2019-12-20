@@ -1,3 +1,39 @@
 .work-detail {
-	
+	text-align: center;
+
+	.info {
+		display: flex;
+		justify-content: space-between;
+
+		:first-child {
+			width: 60%;
+			text-align: left;
+			line-height: 26px;
+			letter-spacing: 2px;
+		}
+
+		.details {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			text-align: left;
+			width: 30%;
+
+			.detail-item {
+				display: flex;
+				flex-direction: column;
+				margin: 15px 0;
+
+				:first-child {
+					color: var(--color4);
+					font-size: 90%;
+					margin-bottom: 4px;
+				}
+
+				a {
+					font-size: unset;
+				}
+			}
+		}
+	}
 }

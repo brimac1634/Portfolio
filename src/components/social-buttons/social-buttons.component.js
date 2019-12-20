@@ -4,7 +4,7 @@ import { ReactComponent as GithubLogo } from '../../assets/github.svg'
 import { ReactComponent as LinkedInLogo } from '../../assets/linkedin.svg'
 import { ReactComponent as FacebookLogo } from '../../assets/facebook.svg'
 
-import './social-button.styles.scss';
+import './social-buttons.styles.scss';
 
 const SocialButtons = ({ vertical }) => (
 	<div className={`social-buttons ${vertical ? 'vertical' : null}`}>
