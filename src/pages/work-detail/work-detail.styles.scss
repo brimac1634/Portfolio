@@ -1,15 +1,42 @@
 .work-detail {
 	text-align: center;
 
+	h1 {
+		font-weight: 700;
+		
+		@media screen and (max-width: 991px) {
+			font-size: 1.8em;
+		}
+	}
+
 	.info {
 		display: flex;
 		justify-content: space-between;
 
+		@media screen and (max-width: 768px) {
+			width: 70%;
+			flex-direction: column;
+			margin: 0 auto;
+		}
+
+		@media screen and (max-width: 575px) {
+			width: 100%;
+		}
+
 		:first-child {
 			width: 60%;
 			text-align: left;
-			line-height: 26px;
+			line-height: 24px;
 			letter-spacing: 2px;
+
+			@media screen and (max-width: 991px) {
+				font-size: 95%;
+				line-height: 20px;
+			}
+
+			@media screen and (max-width: 768px) {
+				width: 100%;
+			}
 		}
 
 		.details {
@@ -18,6 +45,14 @@
 			justify-content: flex-start;
 			text-align: left;
 			width: 30%;
+
+			@media screen and (max-width: 991px) {
+				width: 35%;
+			}
+
+			@media screen and (max-width: 768px) {
+				width: 100%;
+			}
 
 			.detail-item {
 				display: flex;
@@ -28,6 +63,17 @@
 					color: var(--color4);
 					font-size: 90%;
 					margin-bottom: 4px;
+
+					@media screen and (max-width: 991px) {
+						font-size: 85%;
+						margin-bottom: 2px;
+					}
+				}
+
+				:last-child {
+					@media screen and (max-width: 991px) {
+						font-size: 95%;
+					}
 				}
 
 				a {

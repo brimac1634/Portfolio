@@ -38,15 +38,22 @@ export default {
 		title: 'NetRoadshow Teleprompter',
 		description: 'This Teleprompter is an iPad + iPhone combination app that was to serve the film crews at NetRoadshow with a more customizable teleprompter solution. An iPad, while being mounted to a camera can display a script with a number of different customization options, while another iPad or iPhone can act as a remote control for the speaker. This allows the speaker to directly control the speed, pausing, and starting of the script from a podium.',
 		info: [
-			['Link', 'New Site Coming Soon!'],
-			['Client', 'Bon Vivant Collection'],
+			['Employer', 'NetRoadshow, Inc.'],
 			['Development', 'Brian MacPherson'],
-			['Design', 'Ashley Leung'],
-			['Front End', 'React (Javascript)'],
-			['Back End', 'Node + PostgreSQL + AWS']
+			['Design', 'Brian MacPherson'],
+			['Front End', 'Swift'],
+			['Back End', 'Firebase']
 		]
 	},
 	NetRoadshowMiniprogram: {
-		title: 'NetRoadshow Miniprogram'
+		title: 'NetRoadshow Miniprogram',
+		description: 'This project was for a Wechat Miniprogram (The mini apps built into wechat). The purpose of the miniprogram was to provide a point of contact and interactivity for clients in the mainland China market.',
+		info: [
+			['Employer', 'NetRoadshow, Inc.'],
+			['Development', 'Brian MacPherson and Team'],
+			['Design', 'Brian MacPherson'],
+			['Front End', '微信小程序 (Javascript)'],
+			['Back End', 'C#']
+		]
 	}
 }
