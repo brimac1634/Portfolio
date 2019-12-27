@@ -1,6 +1,7 @@
 .about {
 	width: 65%;
 	margin: 2% auto;
+	animation: fade-in 600ms ease-in-out;
 
 	@media screen and (max-width: 991px) {
 		width: 70%;

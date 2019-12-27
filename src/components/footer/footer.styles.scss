@@ -24,7 +24,10 @@
 		align-items: flex-end;
 	}
 
-	> * {
+	.nav {
+		opacity: 0.6;
+		color: white;
+		transition: all 300ms ease-in-out;
 		animation: fade-in-pause 2000ms ease-in-out;
 
 		@keyframes fade-in-pause {
@@ -35,15 +38,9 @@
 				opacity: 0;
 			}
 			100% {
-				opacity: 100%;
+				opacity: 0.6;
 			}
 		}
-	}
-
-	.nav {
-		opacity: 0.6;
-		color: white;
-		transition: all 300ms ease-in-out;
 
 		&:hover {
 			opacity: 1;
