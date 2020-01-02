@@ -15,8 +15,10 @@
 		grid-template-areas: 
 			"spent spent too too"
 			"spent spent too too"
-			"tele bon bon wechat"
-			"tele bon bon wechat";
+			"tele tele tele wechat"
+			"tele tele tele wechat"
+			"bon bon bon bon"
+			"bon bon bon bon";
 		grid-column-gap: 0.8em;
 		grid-row-gap: 0.8em;
 

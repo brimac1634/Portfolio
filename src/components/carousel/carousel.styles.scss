@@ -1,0 +1,50 @@
+.carousel {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	white-space: nowrap;
+	overflow-x: hidden;
+	overflow-y: scroll;
+
+	.slider-wrapper {
+		position: absolute;
+		// height: 100%;
+		width: 100%;
+		top: 50vh;
+	}
+
+	.indicators {
+		position: absolute;
+		bottom: 40px;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		align-items: center;
+
+		@media screen and (max-width: 500px) {
+			bottom: 10px;
+		}
+
+		.indicator {
+			content: '';
+			display: block;
+			width: 15px;
+			height: 15px;
+			border: solid 2px white;
+			border-radius: 50%;
+			margin: 0 10px;
+			cursor: pointer;
+			transition: all 300ms ease-in-out;
+			-webkit-transition: all 300ms ease-in-out;
+
+			@media screen and (max-width: 500px) {
+				width: 10px;
+				height: 10px;
+			}
+
+			&.current {
+				background-color: white;
+			}
+		}
+	}
+}

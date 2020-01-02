@@ -16,17 +16,17 @@ export default [
 	{
 		title: 'NRS Tele',
 		description: 'Tablet + Mobile App',
-		image: require("../../assets/cover.jpg"),
+		image: require("../../assets/tele.gif"),
 		gridArea: 'tele',
 		route: '/NetRoadshowTeleprompter'
 	},
-	{
-		title: 'Bon Vivant',
-		description: 'Retail Website',
-		image: require("../../assets/cover.jpg"),
-		gridArea: 'bon',
-		route: '/BonVivantCollection'
-	},
+	// {
+	// 	title: 'Bon Vivant',
+	// 	description: 'Retail Website',
+	// 	image: require("../../assets/cover.jpg"),
+	// 	gridArea: 'bon',
+	// 	route: '/BonVivantCollection'
+	// },
 	{
 		title: 'NRS Mini',
 		description: 'Wechat Miniprogram',
