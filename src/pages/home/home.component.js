@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import MediaQuery from 'react-responsive';
 
 import Carousel from '../../components/carousel/carousel.component';
 
+import portfolio from '../../assets/portfolio_1920.gif';
 import './home.styles.scss';
 
 const Home = () => {
@@ -9,7 +11,16 @@ const Home = () => {
 	return (
 		<div className='home' style={{height}}>
 			<div className='home-content'>
-				<Carousel setHeight={setHeight} height={height} />
+				<MediaQuery maxWidth={786}>
+					<img 
+						src={portfolio} 
+						alt='fullstack developer' 
+						className='port' 
+					/>
+				</MediaQuery>
+				<MediaQuery minWidth={787}>
+					<Carousel setHeight={setHeight} height={height} />
+				</MediaQuery>
 			</div>
 		</div>
 	)
