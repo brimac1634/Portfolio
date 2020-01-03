@@ -7,7 +7,14 @@
 		height: 100vh;
 		width: 100vw;
 		position: fixed;	
-	}
 
-	
+		.port {
+			width: 80%;
+			position: absolute;
+			left: 48%;
+			top: 60px;
+			transform: translateX(-50%);
+			z-index: -1;
+		}
+	}
 }
