@@ -6,45 +6,127 @@
 	overflow-x: hidden;
 	overflow-y: scroll;
 
+		.port {
+			width: 35%;
+			position: fixed;
+			left: 3%;
+			top: 50%;
+			transform: translate(0, -50%);
+			z-index: -1;
+
+			@media screen and (max-width: 786px) {
+				top: 60px;
+				width: 97%;
+				transform: unset;
+			}
+		}
+
 	.slider-wrapper {
 		position: absolute;
-		// height: 100%;
 		width: 100%;
 		top: 50vh;
+
+		.item {
+			display: inline-block;
+			width: 40vw;
+			height: 350px;
+			margin: 0 10vw;
+			background: transparent;
+			transition: all 300ms ease-in-out;
+			opacity: 0.2;
+
+			&:first-child {
+				margin-left: 80vw;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			&.visible {
+				opacity: 1;
+				transform: scale(1.08);
+			}
+
+			.image {
+				width: 100%;
+				height: 80%;
+				background-size: cover;
+				background-position: center;
+				box-shadow: 5px 5px 140px -18px rgba(0,0,0,0.8);
+			}
+
+			.title {
+				width: 100%;
+				height: 20%;
+				display: flex;
+				justify-content: space-between;
+				transition: all 300ms ease-in-out;
+				opacity: 0;
+
+				&.visible {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.message {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.oval {
+			position: relative;
+			width: 40px;
+			height: 60px;
+			border-radius: 25px;
+			border: solid 2px white;
+			margin-bottom: 10px;
+
+			.line {
+				background: white;
+				width: 2px;
+				height: 20px;
+				position: absolute;
+				top: 15px;
+				left: 50%;
+				transform: translateX(-50%);
+
+				:first-child {
+					bottom: 0;
+					left: 50%;
+					position: absolute;
+					width: 12px;
+					height: 12px;
+					border-bottom: solid 2px white;
+					border-left: solid 2px white;
+					transform: translateX(-50%) rotate(-45deg);
+				}
+			}
+		}
 	}
 
 	.indicators {
-		position: absolute;
+		position: fixed;
 		bottom: 40px;
 		left: 50%;
 		transform: translateX(-50%);
 		display: flex;
 		align-items: center;
+		opacity: 0;
+		transition: all 300ms ease-in-out;
 
-		@media screen and (max-width: 500px) {
-			bottom: 10px;
+		&.show {
+			opacity: 1;
 		}
 
-		.indicator {
-			content: '';
-			display: block;
-			width: 15px;
-			height: 15px;
-			border: solid 2px white;
-			border-radius: 50%;
-			margin: 0 10px;
-			cursor: pointer;
-			transition: all 300ms ease-in-out;
-			-webkit-transition: all 300ms ease-in-out;
-
-			@media screen and (max-width: 500px) {
-				width: 10px;
-				height: 10px;
-			}
-
-			&.current {
-				background-color: white;
-			}
+		> * {
+			letter-spacing: 2px;
 		}
 	}
 }
