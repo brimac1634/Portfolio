@@ -15,7 +15,7 @@ const Home = () => {
 					<img 
 						src={portfolio} 
 						alt='fullstack developer' 
-						className='port' 
+						className='home-gif' 
 					/>
 				</MediaQuery>
 				<MediaQuery minWidth={787}>
