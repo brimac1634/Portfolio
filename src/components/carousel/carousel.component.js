@@ -39,7 +39,7 @@ const Carousel = ({ children, height, setHeight }) => {
 		const newValue = translateValue + -e.deltaY;
 		if (newValue < lastItemOffset || newValue > 0) return;
 		setTranslation(newValue);
-		setOpacity(1 + ((translateValue * 100 / (innerWidth * 0.4)) * 0.01))
+		setOpacity(1 + ((translateValue * 100 / (innerWidth * 0.6)) * 0.01))
 	}
 
 	return (
