@@ -9,6 +9,19 @@ const WorkDetail = ({ match }) => {
 	return (
 		<div className='work-detail'>
 			<h1>{work.title}</h1>
+			{
+				work.video &&
+				<div className='video'>
+					<iframe 
+						src={work.video} 
+						width='100%' 
+						height='100%'
+						frameBorder='0' 
+						allow='autoplay; fullscreen' 
+						allowFullScreen 
+					/>
+				</div>
+			}
 			<div className='info'>
 				<p>{work.description}</p>
 				<div className='details'>

@@ -4,6 +4,8 @@ import workData from '../../pages/work/work.data';
 
 import { useWindowSize } from '../../utils';
 
+import CarouselItem from '../carousel-item/carousel-item.component';
+
 import portfolio from '../../assets/portfolio_1920.gif';
 import './carousel.styles.scss';
 
@@ -69,21 +71,13 @@ const Carousel = ({ children, height, setHeight }) => {
 	            }}
 	         >
 	            {
-					workData.map(({ route, image, title, description}, i) => {
-						const isVisisble = index === i;
-						return (
-							<div 
-								className={`item ${isVisisble ? 'visible' : null}`}
-								key={i}  
-							>
-								<div className='image' style={{backgroundImage: `url(${image})`}} />
-								<div className={`title ${isVisisble ? 'visible' : null}`}>
-									<h3>{title}</h3>
-									<h3>{description}</h3>
-								</div>
-							</div>
-						)
-					})
+					workData.map((item, i) => (
+						<CarouselItem 
+							item={item} 
+							isVisible={index === i} 
+							key={i}
+						/>
+					))
 	            }
 	        </div>
 			<div className={`indicators ${-translateValue > panelWidth ? 'show' : null}`}>

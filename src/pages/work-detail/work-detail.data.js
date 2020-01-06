@@ -3,6 +3,7 @@ export default {
 		title: 'SpentAll Expense Tracker',
 		description: 'SpentAll is a simple-to-use spending tracker allowing users to log expenditures, categorize them, track their habits using the analytical tools. Besides other customizations available, users can log their expenses in foreign currencies while traveling, while the app gets the latest conversion rate to log the expense in the user\'s home currency. This project was a personal project of mine, built for my own needs, but for the use of anyone.',
 		link: 'SpentAll.com',
+		video: 'https://player.vimeo.com/video/383003018',
 		info: [
 			['Development', 'Brian MacPherson'],
 			['Design', 'Brian MacPherson'],
@@ -14,6 +15,7 @@ export default {
 		title: 'Too Far East Barber & Co.',
 		description: 'Too Far East Barber & Co. is a Hong Kong based barber shop. This project was to serve as their general website, providing details, updates, and an avenue to making bookings.',
 		link: 'TooFarEastBarber.com',
+		video: 'https://player.vimeo.com/video/383012641',
 		info: [
 			['Client', 'Too Far East Barber & Co.'],
 			['Development', 'Brian MacPherson'],

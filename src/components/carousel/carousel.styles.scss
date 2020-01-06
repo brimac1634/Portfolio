@@ -25,50 +25,6 @@
 		position: absolute;
 		width: 100%;
 		top: 50vh;
-
-		.item {
-			display: inline-block;
-			width: 40vw;
-			height: 350px;
-			margin: 0 10vw;
-			background: transparent;
-			transition: all 300ms ease-in-out;
-			opacity: 0.2;
-
-			&:first-child {
-				margin-left: 80vw;
-			}
-
-			&:last-child {
-				margin-right: 0;
-			}
-
-			&.visible {
-				opacity: 1;
-				transform: scale(1.08);
-			}
-
-			.image {
-				width: 100%;
-				height: 80%;
-				background-size: cover;
-				background-position: center;
-				box-shadow: 5px 5px 140px -18px rgba(0,0,0,0.8);
-			}
-
-			.title {
-				width: 100%;
-				height: 20%;
-				display: flex;
-				justify-content: space-between;
-				transition: all 300ms ease-in-out;
-				opacity: 0;
-
-				&.visible {
-					opacity: 1;
-				}
-			}
-		}
 	}
 
 	.message {
