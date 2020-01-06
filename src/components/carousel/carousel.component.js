@@ -29,7 +29,7 @@ const Carousel = ({ children, height, setHeight }) => {
 
 	useEffect(()=>{
 		if (-translateValue > innerWidth * 0.2) {
-			setIndex(Math.floor((-translateValue - innerWidth * 0.2)/ (innerWidth * 0.6)))
+			setIndex(Math.floor((-translateValue - innerWidth * 0.2)/ (innerWidth * 0.5)))
 		} else {
 			setIndex(1)
 		}
@@ -60,7 +60,7 @@ const Carousel = ({ children, height, setHeight }) => {
 	        			<div />
 	        		</div>
 	        	</div>
-	        	<span>scroll to discover</span>
+	        	<span className='scroll'>scroll to discover</span>
 	        </div>
 			<div 
 				className="slider-wrapper"
