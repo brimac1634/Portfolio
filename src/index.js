@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { ParallaxProvider } from 'react-scroll-parallax';
+
+import ScrollToTop from './components/scroll-to-top/scroll-to-top.component';
 
 import './index.css';
 import App from './App';
 
 ReactDOM.render(
 	<BrowserRouter>
-		<ParallaxProvider>
-			<App />
-		</ParallaxProvider>
+		<ScrollToTop />
+		<App />
 	</BrowserRouter>
 , document.getElementById('root'));
