@@ -1,16 +1,11 @@
 import React, { useMemo, useEffect, useState, useRef } from 'react';
 
-import workData from '../../pages/work/work.data';
-
 import { useWindowSize } from '../../utils';
-
-import CarouselItem from '../carousel-item/carousel-item.component';
 
 import portfolio from '../../assets/portfolio_1920.gif';
 import './carousel.styles.scss';
 
-const Carousel = ({ children, height, setHeight }) => {
-	const [index, setIndex] = useState(1);
+const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 	const [translateValue, setTranslation] = useState(0);
 	const [opacity, setOpacity] = useState(1);
 	const [innerWidth] = useWindowSize();
@@ -33,7 +28,7 @@ const Carousel = ({ children, height, setHeight }) => {
 		} else {
 			setIndex(1)
 		}
-	}, [translateValue, innerWidth, height])
+	}, [translateValue, innerWidth, setIndex])
 
 	const handleScroll = e => {
 		const newValue = translateValue + -e.deltaY;
@@ -70,18 +65,10 @@ const Carousel = ({ children, height, setHeight }) => {
 					WebkitTransform: `translate(${translateValue}px, -50%)`
 	            }}
 	         >
-	            {
-					workData.map((item, i) => (
-						<CarouselItem 
-							item={item} 
-							isVisible={index === i} 
-							key={i}
-						/>
-					))
-	            }
+	            {children}
 	        </div>
 			<div className={`indicators ${-translateValue > panelWidth ? 'show' : null}`}>
-				<span>{index + 1} / {workData.length}</span>
+				<span>{index + 1} / {children.length}</span>
 			</div>
 		</div>
 	)

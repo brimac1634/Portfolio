@@ -9,7 +9,7 @@ import './footer.styles.scss';
 const Footer = ({ location }) => {
 	const path = location.pathname.split('/')[1];
 	return (
-		<div className='footer'>
+		<div className={`footer ${location.pathname === '/' ? 'is-home' : null}`}>
 			<Link to='/work' className={`nav ${path === 'work' ? 'selected' : null}`}>
 				work
 			</Link>

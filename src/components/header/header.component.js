@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import { ReactComponent as MailLogo } from '../../assets/email.svg'
 
 import './header.styles.scss';
 
-const Header = () => (
-	<div className='header'>
+const Header = ({ location }) => (
+	<div className={`header ${location.pathname === '/' ? 'is-home' : null}`}>
 		<Link to='/' className='name'>
 			<span>BRIAN</span>
 			<span>MAC</span>
@@ -23,4 +23,4 @@ const Header = () => (
 	</div>
 )
 
-export default Header;
+export default withRouter(Header);
