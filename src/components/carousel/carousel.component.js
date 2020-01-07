@@ -16,14 +16,14 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 	const panelWidth = useMemo(()=>innerWidth * 0.4 / 2, [innerWidth])
 
 	const lastItemOffset = useMemo(()=>{
-		if (!wrapper.current) return;
-		return -height + (wrapper.current.clientWidth * 0.7)
-	}, [height])
+		if (!innerWidth) return;
+		return -height + (innerWidth * 0.7)
+	}, [height, innerWidth])
 
 	useEffect(()=>{
 		if (wrapper.current && innerWidth) setHeight(wrapper.current.scrollWidth);
 	}, [wrapper, setHeight, innerWidth])
-
+	console.log(height, lastItemOffset, translateValue)
 	useEffect(()=>{
 		if (-translateValue > innerWidth * 0.2) {
 			setIndex(Math.floor((-translateValue - innerWidth * 0.2)/ (innerWidth * 0.5)))
@@ -69,7 +69,7 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 	         >
 	            {
 	            	Children.map(children, (child, i) => (
-	            		<CarouselItem key={i} isVisible={index === 0}>
+	            		<CarouselItem key={i} isVisible={index === i}>
 							{ child }
 						</CarouselItem>
 	            	))

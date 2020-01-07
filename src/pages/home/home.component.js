@@ -38,11 +38,11 @@ const Home = () => {
 						alt='fullstack developer' 
 						className='home-gif' 
 					/>
-					<div className='carousel-mobile-list'>
-						<CarouselItemList>
-							
-						</CarouselItemList>
-					</div>
+					<CarouselItemList>
+						<CardOne />
+						<CardOne />
+						<CardOne />
+					</CarouselItemList>
 				</MediaQuery>
 				<MediaQuery minWidth={768}>
 					<Carousel 
@@ -51,7 +51,9 @@ const Home = () => {
 						index={index}
 						setIndex={setIndex}
 					>
-						<CarouselItemList index={index} />
+						<CardOne />
+						<CardOne />
+						<CardOne />
 					</Carousel>
 				</MediaQuery>
 			</div>
