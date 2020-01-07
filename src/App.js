@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import MediaQuery from 'react-responsive'; 
 
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
@@ -13,9 +13,9 @@ import About from './pages/about/about.component';
 
 import './App.scss';
 
-const App = () => {
+const App = ({ location }) => {
   return (
-    <div className='App' >
+    <div className='App'>
       <div className='side-panel' />
       <ErrorBoundary>
         <Suspense fallback={<Loader />}>
@@ -27,7 +27,15 @@ const App = () => {
           </Switch>
         </Suspense>
       </ErrorBoundary>
-      <MediaQuery maxWidth={991}>
+      <MediaQuery maxWidth={991} minWidth={768}>
+        {
+          location.pathname !== '/' &&
+          <div className='bottom-panel'>
+            <SocialButtons />
+          </div>
+        }
+      </MediaQuery>
+      <MediaQuery maxWidth={767}>
         <div className='bottom-panel'>
           <SocialButtons />
         </div>
@@ -38,4 +46,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default withRouter(App);
