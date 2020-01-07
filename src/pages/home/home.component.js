@@ -4,6 +4,7 @@ import MediaQuery from 'react-responsive';
 import { useWindowSize } from '../../utils';
 
 import Carousel from '../../components/carousel/carousel.component';
+import CardOne from '../../components/card-one/card-one.component';
 import CarouselItemList from '../../components/carousel-item-list/carousel-item-list.component';
 
 import portfolio from '../../assets/portfolio_1920.gif';
@@ -38,7 +39,9 @@ const Home = () => {
 						className='home-gif' 
 					/>
 					<div className='carousel-mobile-list'>
-						<CarouselItemList allVisible />
+						<CarouselItemList>
+							
+						</CarouselItemList>
 					</div>
 				</MediaQuery>
 				<MediaQuery minWidth={768}>

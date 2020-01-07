@@ -1,6 +1,8 @@
-import React, { useMemo, useEffect, useState, useRef } from 'react';
+import React, { useMemo, useEffect, useState, useRef, Children } from 'react';
 
 import { useWindowSize } from '../../utils';
+
+import CarouselItem from '../../components/carousel-item/carousel-item.component';
 
 import portfolio from '../../assets/portfolio_1920.gif';
 import './carousel.styles.scss';
@@ -65,7 +67,13 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 					WebkitTransform: `translate(${translateValue}px, -50%)`
 	            }}
 	         >
-	            {children}
+	            {
+	            	Children.map(children, (child, i) => (
+	            		<CarouselItem key={i} isVisible={index === 0}>
+							{ child }
+						</CarouselItem>
+	            	))
+	            }
 	        </div>
 			<div className={`indicators ${-translateValue > panelWidth ? 'show' : null}`}>
 				<span>{index + 1} / {children.length}</span>
