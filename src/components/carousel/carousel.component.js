@@ -13,17 +13,16 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 	const [innerWidth] = useWindowSize();
 	const wrapper = useRef(null);
 
-	const panelWidth = useMemo(()=>innerWidth * 0.4 / 2, [innerWidth])
+	const panelWidth = useMemo(()=>innerWidth * 0.2, [innerWidth])
 
 	const lastItemOffset = useMemo(()=>{
-		if (!innerWidth) return;
-		return -height + (innerWidth * 0.7)
-	}, [height, innerWidth])
-
+		return -(panelWidth + (children.length * (panelWidth * 2.25)) - (panelWidth * 0.25))
+	}, [children, panelWidth])
+	
 	useEffect(()=>{
 		if (wrapper.current && innerWidth) setHeight(wrapper.current.scrollWidth);
 	}, [wrapper, setHeight, innerWidth])
-	console.log(height, lastItemOffset, translateValue)
+
 	useEffect(()=>{
 		if (-translateValue > innerWidth * 0.2) {
 			setIndex(Math.floor((-translateValue - innerWidth * 0.2)/ (innerWidth * 0.5)))

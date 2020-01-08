@@ -4,7 +4,7 @@ import './card-one.styles.scss';
 
 const CardOne = () => (
 	<div className='card-one'>
-		<h3>title</h3>
+		<span>hey there</span>
 
 	</div>
 )

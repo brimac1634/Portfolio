@@ -16,14 +16,11 @@ const Home = () => {
 	const [innerWidth] = useWindowSize();
 	const home = useRef(null);
 
-	useEffect(() => {
-		// if (home.current) {
-		// 	home.current.scrollTo(0, 0);
-
-		// 	console.log(window.scrollY)
-		// }
-	}, [home]);
-
+	// useEffect(() => {
+	// 	window.scroll
+	// }, []);
+	// console.log(window.scrollY)
+	
 	return (
 		<div 
 			className='home' 
