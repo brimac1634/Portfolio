@@ -51,6 +51,7 @@ export default {
 	NetRoadshowMiniprogram: {
 		title: 'NetRoadshow Miniprogram',
 		description: 'This project was for a Wechat Miniprogram (The mini apps built into wechat). The purpose of the miniprogram was to provide a point of contact and interactivity for clients in the mainland China market.',
+		video: 'https://player.vimeo.com/video/383444447',
 		info: [
 			['Employer', 'NetRoadshow, Inc.'],
 			['Development', 'Brian MacPherson and Team'],
