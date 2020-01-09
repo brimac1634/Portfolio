@@ -15,8 +15,8 @@
 		grid-template-areas: 
 			"spent spent too too"
 			"spent spent too too"
-			"tele tele tele wechat"
-			"tele tele tele wechat";
+			"tele tele holder1 wechat"
+			"tele tele holder1 wechat";
 		grid-column-gap: 0.8em;
 		grid-row-gap: 0.8em;
 
@@ -30,8 +30,8 @@
 				"too too"
 				"tele tele"
 				"tele tele"
-				"wechat wechat"
-				"wechat wechat";
+				"holder1 wechat"
+				"holder1 wechat";
 		}
 
 		&::before {
@@ -46,6 +46,16 @@
 			opacity: 0;
 			animation: fade-in 1000ms ease-out;
 			animation-fill-mode: forwards;
+		}
+
+		.holder {
+			background-image: url('../../assets/card_1.gif');
+			background-size: cover;
+			background-position: center;
+
+			&.holder1 {
+				grid-area: holder1;
+			}
 		}
 	}
 }

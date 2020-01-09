@@ -33,6 +33,7 @@ const Work = ({ match, history }) => (
 									/>
 								))
 							}
+							<div className='holder holder1'/>
 						</div>
 					)}/>
 					<Route path={`${match.path}/:work`} component={WorkDetail}/>
