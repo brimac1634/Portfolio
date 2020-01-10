@@ -16,7 +16,10 @@ import './App.scss';
 const App = ({ location }) => {
   return (
     <div className='App'>
-      <div className='side-panel' />
+      {
+        location.pathname !== '/about' &&
+        <div className='side-panel' />
+      }
       <ErrorBoundary>
         <Suspense fallback={<Loader />}>
           <Switch>

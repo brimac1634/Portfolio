@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import MediaQuery from 'react-responsive';
 
 import { useWindowSize } from '../../utils';
@@ -14,18 +14,10 @@ const Home = () => {
 	const [index, setIndex] = useState(1);
 	const [height, setHeight] = useState('100vh');
 	const [innerWidth] = useWindowSize();
-	const home = useRef(null);
-
-	// useEffect(() => {
-	// 	window.scroll
-	// }, []);
-	// console.log(window.scrollY)
 	
 	return (
 		<div 
-			className='home' 
-			ref={home}
-			onScroll={e=>console.log(e)}
+			className='home'
 			style={{height: innerWidth > 767 ? height : null}}
 		>
 			<div className='home-content'>

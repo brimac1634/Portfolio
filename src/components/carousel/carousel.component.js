@@ -1,6 +1,6 @@
 import React, { useMemo, useEffect, useState, useRef, Children } from 'react';
 
-import { useWindowSize } from '../../utils';
+import { useWindowSize, useScrollY } from '../../utils';
 
 import CarouselItem from '../../components/carousel-item/carousel-item.component';
 
@@ -11,6 +11,7 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 	const [translateValue, setTranslation] = useState(0);
 	const [opacity, setOpacity] = useState(1);
 	const [innerWidth] = useWindowSize();
+	const scrollY = useScrollY();
 	const wrapper = useRef(null);
 
 	const panelWidth = useMemo(()=>innerWidth * 0.2, [innerWidth])
@@ -27,21 +28,20 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 		if (-translateValue > innerWidth * 0.2) {
 			setIndex(Math.floor((-translateValue - innerWidth * 0.2)/ (innerWidth * 0.5)))
 		} else {
-			setIndex(1)
+			setIndex(null)
 		}
 	}, [translateValue, innerWidth, setIndex])
 
-	const handleScroll = e => {
-		const newValue = translateValue + -e.deltaY;
-		if (newValue < lastItemOffset || newValue > 0) return;
-		setTranslation(newValue);
-		setOpacity(1 + ((translateValue * 100 / (innerWidth * 0.6)) * 0.01))
-	}
+	useEffect(()=>{
+		const scrollValue = -scrollY;
+		if (!scrollValue || scrollValue < lastItemOffset || scrollValue > 0) return;
+		setTranslation(scrollValue);
+		setOpacity(1 + ((scrollValue * 100 / (innerWidth * 0.6)) * 0.01))
+	}, [scrollY, innerWidth, lastItemOffset])
 
 	return (
 		<div 
-			className='carousel' 
-			onWheel={handleScroll}
+			className='carousel'
 			style={{height}}
 		> 
 			<img 

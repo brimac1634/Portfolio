@@ -14,7 +14,7 @@ const WorkDetail = ({ match }) => {
 	useEffect(()=>{
 		if (work.video) setIsLoading(true);
 	}, [work, setIsLoading])
-
+	
 	return (
 		<div className='work-detail'>
 			<h1>{work.title}</h1>
