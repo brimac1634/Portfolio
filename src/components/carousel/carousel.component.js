@@ -21,8 +21,11 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 	}, [children, panelWidth])
 	
 	useEffect(()=>{
-		if (wrapper.current && innerWidth) setHeight(wrapper.current.scrollWidth);
-	}, [wrapper, setHeight, innerWidth])
+		// fix the height here
+		console.log(children.length)
+		if (innerWidth) setHeight((panelWidth * 0.5) + ((panelWidth * 2.5) * children.length));
+			// setHeight(wrapper.current.scrollWidth);
+	}, [setHeight, panelWidth, children])
 
 	useEffect(()=>{
 		if (-translateValue > innerWidth * 0.2) {
