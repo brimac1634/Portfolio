@@ -5,25 +5,21 @@ import { useWindowSize, useScrollY } from '../../utils';
 import CarouselItem from '../../components/carousel-item/carousel-item.component';
 
 import portfolio from '../../assets/portfolio_1920.gif';
+import portfolio_800 from '../../assets/portfolio_800.gif';
+import portfolio_400 from '../../assets/portfolio_400.gif';
 import './carousel.styles.scss';
 
 const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 	const [translateValue, setTranslation] = useState(0);
 	const [opacity, setOpacity] = useState(1);
-	const [innerWidth] = useWindowSize();
+	const [innerWidth, innerHeight] = useWindowSize();
 	const scrollY = useScrollY();
-	const wrapper = useRef(null);
+	// const wrapper = useRef(null);
 
 	const panelWidth = useMemo(()=>innerWidth * 0.2, [innerWidth])
-
-	const lastItemOffset = useMemo(()=>{
-		return -(panelWidth + (children.length * (panelWidth * 2.25)) - (panelWidth * 0.25))
-	}, [children, panelWidth])
 	
 	useEffect(()=>{
-		// fix the height here
-		console.log(children.length)
-		if (innerWidth) setHeight((panelWidth * 0.5) + ((panelWidth * 2.5) * children.length));
+		setHeight((panelWidth * 2.5) + ((panelWidth * 2.5) * children.length));
 			// setHeight(wrapper.current.scrollWidth);
 	}, [setHeight, panelWidth, children])
 
@@ -37,11 +33,13 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 
 	useEffect(()=>{
 		const scrollValue = -scrollY;
-		if (!scrollValue || scrollValue < lastItemOffset || scrollValue > 0) return;
+		if (!scrollValue) return;
 		setTranslation(scrollValue);
 		setOpacity(1 + ((scrollValue * 100 / (innerWidth * 0.6)) * 0.01))
-	}, [scrollY, innerWidth, lastItemOffset])
-
+	}, [scrollY, innerWidth])
+// height needs to be increased by the scrollY's innerheight
+	console.log(window)
+	console.log(innerHeight + scrollY, height)
 	return (
 		<div 
 			className='carousel'
@@ -49,9 +47,14 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 		> 
 			<img 
 				style={{opacity}}
-				src={portfolio} 
+				src={portfolio_800}
+				srcSet={
+					`${portfolio_400} 400w,
+					${portfolio_800} 800w, 
+					${portfolio} 1920w`
+				} 
 				alt='fullstack developer' 
-				className='port' 
+				className='port'
 			/>
 			<div className='message' style={{opacity}}>
 	        	<div className='oval'>
@@ -63,7 +66,6 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 	        </div>
 			<div 
 				className="slider-wrapper"
-				ref={wrapper}
 	          	style={{
 					transform: `translate(${translateValue}px, -50%)`,
 					WebkitTransform: `translate(${translateValue}px, -50%)`
