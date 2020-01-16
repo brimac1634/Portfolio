@@ -44,6 +44,10 @@
 		.dual-grid {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
+
+			&.spread {
+				grid-row-gap: 20%;
+			}
 		}
 
 		.first-line {
