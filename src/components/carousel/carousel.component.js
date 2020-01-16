@@ -30,7 +30,7 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 		} else {
 			setIndex(null)
 		}
-	}, [translateValue, innerWidth, setIndex])
+	}, [translateValue, innerWidth, setIndex, children])
 
 	useEffect(()=>{
 		const scrollValue = -scrollY;

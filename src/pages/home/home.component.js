@@ -4,7 +4,9 @@ import MediaQuery from 'react-responsive';
 import { useWindowSize } from '../../utils';
 
 import Carousel from '../../components/carousel/carousel.component';
-import CardOne from '../../components/card-one/card-one.component';
+import CardOne from '../../components/card/card-one.component';
+import CardTwo from '../../components/card/card-two.component';
+import CardThree from '../../components/card/card-three.component';
 import CarouselItemList from '../../components/carousel-item-list/carousel-item-list.component';
 
 import portfolio from '../../assets/portfolio_1920.gif';
@@ -36,8 +38,8 @@ const Home = () => {
 					/>
 					<CarouselItemList>
 						<CardOne />
-						<CardOne />
-						<CardOne />
+						<CardTwo />
+						<CardThree />
 					</CarouselItemList>
 				</MediaQuery>
 				<MediaQuery minWidth={768}>
@@ -48,8 +50,8 @@ const Home = () => {
 						setIndex={setIndex}
 					>
 						<CardOne />
-						<CardOne />
-						<CardOne />
+						<CardTwo />
+						<CardThree />
 					</Carousel>
 				</MediaQuery>
 			</div>
