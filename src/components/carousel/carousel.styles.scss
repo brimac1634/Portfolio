@@ -23,6 +23,15 @@
 	.slider-wrapper {
 		position: absolute;
 		top: 50vh;
+		height: 60vh;
+		margin-left: 75vw;
+
+		.container {
+			display: inline-block;
+			width: 40vw;
+			height: 100%;
+			margin: 0 5vw;
+		}
 	}
 
 	.message {
