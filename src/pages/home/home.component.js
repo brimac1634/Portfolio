@@ -33,8 +33,7 @@ const Home = () => {
 							${portfolio} 1920w`
 						} 
 						alt='fullstack developer' 
-						className='home-gif' 
-						onLoad={e=>console.log(e.target.currentSrc)} 
+						className='home-gif'
 					/>
 					<CarouselItemList>
 						<CardOne />
