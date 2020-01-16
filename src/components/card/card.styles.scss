@@ -32,6 +32,11 @@
 		opacity: 0;
 		animation-fill-mode: forwards;
 		animation: fade-in 600ms cubic-bezier(0.7, 0, 0.3, 1) 800ms forwards;
+		font-size: 1.5vw;
+
+		@media screen and (max-width: 768px) {
+			font-size: 2.5vw;
+		}
 
 		h3 {
 			margin: 3% 0;
