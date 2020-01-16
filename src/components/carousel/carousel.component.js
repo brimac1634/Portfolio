@@ -14,18 +14,22 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 	const [opacity, setOpacity] = useState(1);
 	const [innerWidth, innerHeight] = useWindowSize();
 	const scrollY = useScrollY();
-	// const wrapper = useRef(null);
+	const wrapper = useRef(null);
 
 	const panelWidth = useMemo(()=>innerWidth * 0.2, [innerWidth])
 	
 	useEffect(()=>{
-		setHeight((panelWidth * 2.5) + ((panelWidth * 2.5) * children.length));
-			// setHeight(wrapper.current.scrollWidth);
-	}, [setHeight, panelWidth, children])
+		// setHeight((panelWidth * 2.5) + ((panelWidth * 2.5) * children.length));
+		console.log(wrapper.current.scrollWidth)
+		setHeight(wrapper.current.scrollWidth);
+	}, [setHeight, wrapper, innerWidth])
 
 	useEffect(()=>{
 		if (-translateValue > innerWidth * 0.2) {
-			setIndex(Math.floor((-translateValue - innerWidth * 0.2)/ (innerWidth * 0.5)))
+			let index = Math.floor((-translateValue - innerWidth * 0.2)/ (innerWidth * 0.5));
+			index = index <= children.length - 1 ? index : children.length - 1;
+			console.log(index, children.length)
+			setIndex(index);
 		} else {
 			setIndex(null)
 		}
@@ -38,8 +42,11 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 		setOpacity(1 + ((scrollValue * 100 / (innerWidth * 0.6)) * 0.01))
 	}, [scrollY, innerWidth])
 // height needs to be increased by the scrollY's innerheight
-	console.log(window)
-	console.log(innerHeight + scrollY, height)
+	// console.log(innerHeight + scrollY, height)
+	if (wrapper.current) {
+		console.log(scrollY, wrapper.current.scrollWidth)
+	}
+	
 	return (
 		<div 
 			className='carousel'
@@ -65,7 +72,8 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 	        	<span className='scroll'>scroll to discover</span>
 	        </div>
 			<div 
-				className="slider-wrapper"
+				className='slider-wrapper'
+				ref={wrapper}
 	          	style={{
 					transform: `translate(${translateValue}px, -50%)`,
 					WebkitTransform: `translate(${translateValue}px, -50%)`
