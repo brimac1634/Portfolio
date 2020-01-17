@@ -8,12 +8,23 @@ const SeeMore = () => {
 	const [pupilTranslate, setPupilTranslate] = useState([0, 0]);
 	const [irisTranslate, setIrisTranslate] = useState([0, 0]);
 	const [irisWidth, setIrisWidth] = useState(0);
+	const [eyeIsClosed, setEyeIsClosed] = useState(false);
 	const iris = useRef(null);
 	const mousePosition = useMousePosition();
 	const windowSize = useWindowSize();
 
 	const [pupilTranslateX, pupilTranslateY] = pupilTranslate;
 	const [irisTranslateX, irisTranslateY] = irisTranslate;
+
+	useEffect(()=>{
+		const interval = setInterval(()=>{
+			setEyeIsClosed(true)
+			setTimeout(()=>{
+				setEyeIsClosed(false)
+			}, 600)
+		}, 7000)
+		return ()=>clearInterval(interval);
+	}, [])
 
 	useEffect(()=>{
 		if (!iris) return;
@@ -38,7 +49,15 @@ const SeeMore = () => {
 
 	return (
 		<div className='see-more'>
-			<div className='outer-eye'>
+			<div 
+				className='outer-eye'
+				onClick={()=>{
+					setEyeIsClosed(true)
+					setTimeout(()=>{
+						setEyeIsClosed(false)
+					}, 600)
+				}}
+			>
 				<div 
 					className='iris' 
 					ref={iris}
@@ -57,7 +76,7 @@ const SeeMore = () => {
 						<div />
 					</div>
 				</div>
-				<div className='shut' />
+				<div className={`eye-lid ${eyeIsClosed ? 'shut' : null}`} />
 			</div>
 		</div>
 	)
