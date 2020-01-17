@@ -20,12 +20,12 @@ const SeeMore = () => {
 
 	useEffect(()=>{
 		if (!iris) return;
-		let [mouseX, mouseY] = mousePosition;
-		console.log(mouseX, mouseY)
 		const [innerWidth, innerHeight] = windowSize;
-		const halfPupil = irisWidth * 0.2;
-		const translateX = ((mouseX * irisWidth) / innerWidth) - halfPupil;
-		const translateY = ((mouseY * irisWidth) / innerHeight) - halfPupil;
+		let [mouseX, mouseY] = mousePosition;
+		mouseX = (mouseX - innerWidth * 0.5) * 0.6;
+		mouseY = (mouseY - innerHeight * 0.5) * 0.6;
+		const translateX = ((mouseX * irisWidth) / innerWidth);
+		const translateY = ((mouseY * irisWidth) / innerHeight);
 		setTranslate([translateX, translateY]);
 	}, [mousePosition, windowSize, irisWidth, setTranslate])
 
