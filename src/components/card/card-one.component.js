@@ -9,15 +9,10 @@ const CardOne = () => (
 		<div className='logo'>
 			<HongKongLogo />
 		</div>
-		<div className='text'>
-			<div className='first-line'>
-				<h2>Hi, </h2>
-				<h2>I'm </h2>
-				<h2>Brian</h2>
-				<h2>.</h2>
-				<h2>.</h2>
-				<h2>.</h2>
-				<h3 className='bottom-line'>a Hong Kong based fullstack developer...</h3>
+		<div className='text-container'>
+			<div className='text'>
+				<h2>Hi, I'm <span className='gold'>BRIAN</span>...</h2>
+				<span>a Hong Kong based fullstack developer...</span>
 			</div>
 		</div>
 	</div>

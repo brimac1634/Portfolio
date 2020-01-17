@@ -4,7 +4,7 @@ import { useWindowSize, useScrollY } from '../../utils';
 
 import CarouselItem from '../../components/carousel-item/carousel-item.component';
 
-import portfolio from '../../assets/portfolio_1920.gif';
+import portfolio from '../../assets/portfolio.gif';
 import portfolio_800 from '../../assets/portfolio_800.gif';
 import portfolio_400 from '../../assets/portfolio_400.gif';
 import './carousel.styles.scss';

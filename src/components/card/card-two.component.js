@@ -9,13 +9,15 @@ const CardTwo = () => (
 		<div className='logo'>
 			<PrioritiesLogo />
 		</div>
-		<div className='text'>
-			<h3>...who <span className='gold'>PRIORITIZES</span>...</h3>
-			<div className='dual-grid spread'>
-				<span>Fast Performance</span>
-				<span>Responsive Layouts</span>
-				<span>Intuitive Design</span>
-				<span>Dynamic Content</span>
+		<div className='text-container'>
+			<div className='text'>
+				<h3>...who <span className='gold'>PRIORITIZES</span>...</h3>
+				<div className='dual-grid spread'>
+					<span>Fast Performance</span>
+					<span>Responsive Layouts</span>
+					<span>Intuitive Design</span>
+					<span>Dynamic Content</span>
+				</div>
 			</div>
 		</div>
 	</div>

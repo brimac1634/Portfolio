@@ -9,7 +9,7 @@ import CardTwo from '../../components/card/card-two.component';
 import CardThree from '../../components/card/card-three.component';
 import CarouselItemList from '../../components/carousel-item-list/carousel-item-list.component';
 
-import portfolio from '../../assets/portfolio_1920.gif';
+import portfolio from '../../assets/portfolio.gif';
 import portfolio_800 from '../../assets/portfolio_800.gif';
 import portfolio_400 from '../../assets/portfolio_400.gif';
 import './home.styles.scss';

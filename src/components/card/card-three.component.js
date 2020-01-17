@@ -9,19 +9,21 @@ const CardThree = () => (
 		<div className='logo'>
 			<SkillsLogo />
 		</div>
-		<div className='text'>
-			<h3>...with <span className='gold'>EXPERIENCE</span> in...</h3>
-			<div className='dual-grid'>
-				<span>React/Redux</span>
-				<span>Javascript</span>
-				<span>CSS</span>
-				<span>Node</span>
-				<span>Express</span>
-				<span>SQL/NoSQL</span>
-				<span>Security</span>
-				<span>Swift</span>
-				<span>Git</span>
-				<span>Docker</span>
+		<div className='text-container'>
+			<div className='text'>
+				<h3>...with <span className='gold'>EXPERIENCE</span> in...</h3>
+				<div className='dual-grid'>
+					<span>React/Redux</span>
+					<span>Javascript</span>
+					<span>CSS</span>
+					<span>Node</span>
+					<span>Express</span>
+					<span>SQL/NoSQL</span>
+					<span>Security</span>
+					<span>Swift</span>
+					<span>Git</span>
+					<span>Docker</span>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -27,74 +27,38 @@
 			}
 		}
 	}
+	
+	.text-container {
+		height: 80%;
+		display: flex;
+		justify-content: center;
 
-	.text {
-		opacity: 0;
-		animation-fill-mode: forwards;
-		animation: fade-in 600ms cubic-bezier(0.7, 0, 0.3, 1) 800ms forwards;
-		font-size: 1.5vw;
+		.text {
+			opacity: 0;
+			animation-fill-mode: forwards;
+			animation: fade-in 600ms cubic-bezier(0.7, 0, 0.3, 1) 800ms forwards;
+			font-size: 1.5vw;
 
-		@media screen and (max-width: 768px) {
-			font-size: 2.8vw;
-		}
-
-		h3 {
-			margin: 3% 0;
-		}
-
-		.gold {
-			color: var(--color4);
-		}
-
-		.dual-grid {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-
-			&.spread {
-				grid-row-gap: 20%;
-			}
-		}
-
-		.first-line {
-			> * {
-				margin: 20px 2px 6px 2px;
-				opacity: 0;
-				animation-fill-mode: forwards;
-				animation: fade-in 600ms cubic-bezier(0.7, 0, 0.3, 1) forwards;
-				display: inline-block;
+			@media screen and (max-width: 768px) {
+				font-size: 2.8vw;
 			}
 
-			:first-child {
-				animation-delay: 700ms;
+			h3 {
+				margin: 3% 0;
 			}
 
-			:nth-child(2) {
-				animation-delay: 1400ms;
-			}
-
-			:nth-child(3) {
+			.gold {
 				color: var(--color4);
-				animation-delay: 1600ms;
 			}
 
-			:nth-child(4) {
-				animation-delay: 2200ms;
-			}
+			.dual-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
 
-			:nth-child(5) {
-				animation-delay: 2400ms;
-			}
-
-			:nth-child(6) {
-				animation-delay: 2600ms;
-			}
-
-			:last-child {
-				margin: 10px 0;
-				display: block;
-				animation-delay: 3000ms;
+				&.spread {
+					grid-row-gap: 20%;
+				}
 			}
 		}
 	}
-
 }
