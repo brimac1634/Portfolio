@@ -13,9 +13,12 @@ const Footer = ({ location }) => {
 			<Link to='/work' className={`nav ${path === 'work' ? 'selected' : null}`}>
 				work
 			</Link>
-			<MediaQuery minWidth={992}>
-				<SocialButtons vertical />
-			</MediaQuery>
+			{
+				location.pathname !== '/' &&
+				<MediaQuery minWidth={992}>
+					<SocialButtons vertical />
+				</MediaQuery>
+			}
 			<Link to='/about' className={`nav ${path === 'about' ? 'selected' : null}`}>
 				about
 			</Link>

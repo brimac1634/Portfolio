@@ -2,7 +2,9 @@ import React, { useMemo, useEffect, useState, useRef, Children } from 'react';
 
 import { useWindowSize, useScrollY } from '../../utils';
 
-import CarouselItem from '../../components/carousel-item/carousel-item.component';
+import CarouselItem from '../carousel-item/carousel-item.component';
+import SocialButtons from '../social-buttons/social-buttons.component';
+import SeeMore from '../see-more/see-more.component';
 
 import portfolio from '../../assets/portfolio.gif';
 import portfolio_800 from '../../assets/portfolio_800.gif';
@@ -80,6 +82,12 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 						</div>
 	            	))
 	            }
+	        </div>
+	        <div className={`more ${scrollY === height - innerHeight ? 'show' : null}`}>
+		        <SeeMore />
+	        </div>
+	        <div className={`social-panel ${scrollY === height - innerHeight ? 'show' : null}`}>
+		        <SocialButtons vertical />
 	        </div>
 			<div className={`indicators ${-translateValue > panelWidth ? 'show' : null}`}>
 				<span>{index + 1} / {children.length}</span>

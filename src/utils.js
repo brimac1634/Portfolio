@@ -27,3 +27,17 @@ export const useScrollY = () => {
   }, []);
   return scrollY
 }
+
+export const useMousePosition = () => {
+  const [mouse, setMouse] = useState([0, 0]);
+
+  useEffect(() => {
+    function handleMouse(e) {
+      setMouse([e.x, e.y])
+    }
+
+    window.addEventListener('mousemove', handleMouse);
+    return () => window.removeEventListener('mousemove', handleMouse);
+  }, [])
+  return mouse
+}
