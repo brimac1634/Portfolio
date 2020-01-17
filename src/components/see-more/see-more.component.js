@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 import { useWindowSize, useMousePosition } from '../../utils';
 
@@ -77,6 +78,11 @@ const SeeMore = () => {
 					</div>
 				</div>
 				<div className={`eye-lid ${eyeIsClosed ? 'shut' : null}`} />
+			</div>
+			<h2 className='more-line'>see more</h2>
+			<div className='options'>
+				<Link to='/work'>work</Link>
+				<Link to='/about'>about</Link>
 			</div>
 		</div>
 	)

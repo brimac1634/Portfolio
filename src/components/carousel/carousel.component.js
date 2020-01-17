@@ -83,10 +83,10 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 	            	))
 	            }
 	        </div>
-	        <div className={`more ${scrollY === height - innerHeight ? 'show' : null}`}>
+	        <div className={`more ${scrollY > height - innerHeight * 1.2 ? 'show' : null}`}>
 		        <SeeMore />
 	        </div>
-	        <div className={`social-panel ${scrollY === height - innerHeight ? 'show' : null}`}>
+	        <div className={`social-panel ${scrollY > height - innerHeight * 1.2 ? 'show' : null}`}>
 		        <SocialButtons vertical />
 	        </div>
 			<div className={`indicators ${-translateValue > panelWidth ? 'show' : null}`}>
