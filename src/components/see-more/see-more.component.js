@@ -5,13 +5,15 @@ import { useWindowSize, useMousePosition } from '../../utils';
 import './see-more.styles.scss';
 
 const SeeMore = () => {
-	const [translate, setTranslate] = useState([0, 0]);
+	const [pupilTranslate, setPupilTranslate] = useState([0, 0]);
+	const [irisTranslate, setIrisTranslate] = useState([0, 0]);
 	const [irisWidth, setIrisWidth] = useState(0);
 	const iris = useRef(null);
 	const mousePosition = useMousePosition();
 	const windowSize = useWindowSize();
 
-	const [translateX, translateY] = translate;
+	const [pupilTranslateX, pupilTranslateY] = pupilTranslate;
+	const [irisTranslateX, irisTranslateY] = irisTranslate;
 
 	useEffect(()=>{
 		if (!iris) return;
@@ -21,24 +23,41 @@ const SeeMore = () => {
 	useEffect(()=>{
 		if (!iris) return;
 		const [innerWidth, innerHeight] = windowSize;
-		let [mouseX, mouseY] = mousePosition;
-		mouseX = (mouseX - innerWidth * 0.5) * 0.6;
-		mouseY = (mouseY - innerHeight * 0.5) * 0.6;
-		const translateX = ((mouseX * irisWidth) / innerWidth);
-		const translateY = ((mouseY * irisWidth) / innerHeight);
-		setTranslate([translateX, translateY]);
-	}, [mousePosition, windowSize, irisWidth, setTranslate])
+		const [mouseX, mouseY] = mousePosition;
+		const pupilX = (mouseX - innerWidth * 0.5) * 0.4;
+		const pupilY = (mouseY - innerHeight * 0.5) * 0.4;
+		const irisX = (mouseX - innerWidth * 0.5) * 0.3;
+		const irisY = (mouseY - innerHeight * 0.5) * 0.3;
+		const pupilTranslateX = ((pupilX * irisWidth) / innerWidth);
+		const pupilTranslateY = ((pupilY * irisWidth) / innerHeight);
+		const irisTranslateX = ((irisX * irisWidth) / innerWidth);
+		const irisTranslateY = ((irisY * irisWidth) / innerHeight);
+		setPupilTranslate([pupilTranslateX, pupilTranslateY]);
+		setIrisTranslate([irisTranslateX, irisTranslateY])
+	}, [mousePosition, windowSize, irisWidth, setPupilTranslate, setIrisTranslate])
 
 	return (
 		<div className='see-more'>
-			<div className='iris' ref={iris} >
+			<div className='outer-eye'>
 				<div 
-					className='pupil' 
+					className='iris' 
+					ref={iris}
 					style={{
-						transform: `translate(${translateX}px, ${translateY}px)`,
-						WebkitTransform: `translate(${translateX}px, ${translateY}px)`,
-		            }}
-				/>
+						transform: `rotate(-45deg) translate(${irisTranslateX}px, ${irisTranslateY}px)`,
+						WebkitTransform: `rotate(-45deg) translate(${irisTranslateX}px, ${irisTranslateY}px)`,
+		            }} 
+				>
+					<div 
+						className='pupil' 
+						style={{
+							transform: `translate(${pupilTranslateX}px, ${pupilTranslateY}px)`,
+							WebkitTransform: `translate(${pupilTranslateX}px, ${pupilTranslateY}px)`,
+			            }}
+					>
+						<div />
+					</div>
+				</div>
+				<div className='shut' />
 			</div>
 		</div>
 	)
