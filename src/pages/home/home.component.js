@@ -25,16 +25,17 @@ const Home = () => {
 		>
 			<div className='home-content'>
 				<MediaQuery maxWidth={767}>
-					<img 
-						src={portfolio_400} 
-						srcSet={
-							`${portfolio_400} 400w, 
-							${portfolio_800} 800w, 
-							${portfolio} 1920w`
-						} 
-						alt='fullstack developer' 
-						className='home-gif'
-					/>
+					<div className='home-gif'>
+						<img 
+							src={portfolio_400} 
+							srcSet={
+								`${portfolio_400} 400w, 
+								${portfolio_800} 800w, 
+								${portfolio} 1920w`
+							} 
+							alt='fullstack developer'
+						/>
+					</div>
 					<CarouselItemList>
 						<CardOne />
 						<CardTwo />

@@ -1,47 +1,55 @@
-import React, { Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import workData from './work.data';
 
-import ErrorBoundary from '../../components/error-boundary/error-boundary.component';
 import Loader from '../../components/loader/loader.component';
 import WorkItem from '../../components/work-item/work-item.component';
 import WorkDetail from '../work-detail/work-detail.component';
 
 import './work.styles.scss';
 
-const Work = ({ match, history }) => (
-	<div className='work'>
-		<ErrorBoundary>
-	        <Suspense fallback={<Loader />}>
-				<Switch>
-					<Route exact path={match.path} render={()=>(
-						<div className='work-collection'>
-							{
-								workData &&
-								workData.map(({ route, gridArea, image, title, description}, i) => (
-									<WorkItem 
-										key={title}
-										onClick={()=>history.push(`${match.path}${route}`)}
-										style={{
-											gridArea: gridArea,
-											animationDelay: `${(i + 1) * 0.2}s`
-										}}
-										image={image} 
-										title={title} 
-										description={description} 
-									/>
-								))
-							}
-							<div className='holder holder1'/>
-						</div>
-					)}/>
-					<Route path={`${match.path}/:work`} component={WorkDetail}/>
-					<Redirect to={match.path} />
-				</Switch>
-	        </Suspense>
-		</ErrorBoundary>
-	</div>
-)
+const Work = ({ match, history }) => {
+	const [imageCount, setImageCount] = useState([]);
+	const [loadComplete, setLoadComplete] = useState(false);
+	useEffect(()=>{
+		if (imageCount.length === workData.length) setLoadComplete(true);
+	}, [imageCount])
+
+	return (
+		<div className='work'>
+			<Switch>
+				<Route exact path={match.path} render={()=>(
+					<div className={`work-collection ${loadComplete ? 'show' : null}`}>
+						{
+							workData &&
+							workData.map(({ route, gridArea, image, title, description}, i) => (
+								<WorkItem 
+									key={title}
+									onClick={()=>history.push(`${match.path}${route}`)}
+									style={{
+										gridArea: gridArea,
+										animationDelay: `${(i + 1) * 0.2}s`
+									}}
+									image={image} 
+									title={title} 
+									description={description}
+									setImageLoad={()=>setImageCount([...imageCount, i])} 
+								/>
+							))
+						}
+						<div className='holder holder1'/>
+						{
+							!loadComplete &&
+							<Loader />
+						}
+					</div>
+				)}/>
+				<Route path={`${match.path}/:work`} component={WorkDetail}/>
+				<Redirect to={match.path} />
+			</Switch>
+		</div>
+	)
+}
 
 export default Work;
