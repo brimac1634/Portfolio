@@ -14,6 +14,7 @@ import './carousel.styles.scss';
 const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 	const [translateValue, setTranslation] = useState(0);
 	const [opacity, setOpacity] = useState(1);
+	const [endOpacity, setEndOpacity] = useState(0);
 	const [innerWidth, innerHeight] = useWindowSize();
 	const scrollY = useScrollY();
 	const wrapper = useRef(null);
@@ -21,7 +22,7 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 	const panelWidth = useMemo(()=>innerWidth * 0.2, [innerWidth])
 	
 	useEffect(()=>{
-		setHeight(wrapper.current.scrollWidth + innerHeight);
+		setHeight(wrapper.current.scrollWidth + innerHeight + innerWidth * 0.5);
 	}, [setHeight, wrapper, innerWidth, innerHeight])
 
 	useEffect(()=>{
@@ -39,7 +40,11 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 		if (!scrollValue) return;
 		setTranslation(scrollValue);
 		setOpacity(1 + ((scrollValue * 100 / (innerWidth * 0.6)) * 0.01))
-	}, [scrollY, innerWidth])
+		const scrollWidth = height - innerHeight;
+		const fadeWidth = scrollWidth - (height - innerHeight * 1.8)
+		const fadeCount = scrollY - (scrollWidth - fadeWidth)
+		setEndOpacity((fadeCount * 100 / fadeWidth) * 0.01)
+	}, [scrollY, innerWidth, height, innerHeight])
 	
 	return (
 		<div 
@@ -65,6 +70,12 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 	        	</div>
 	        	<span className='scroll'>scroll to discover</span>
 	        </div>
+	        <div className='more' style={{opacity: endOpacity}}>
+		        <SeeMore />
+	        </div>
+	        <div className='social-panel' style={{opacity: endOpacity}}>
+		        <SocialButtons vertical />
+	        </div>
 			<div 
 				className='slider-wrapper'
 				ref={wrapper}
@@ -82,12 +93,6 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 						</div>
 	            	))
 	            }
-	        </div>
-	        <div className={`more ${scrollY > height - innerHeight * 1.2 ? 'show' : null}`}>
-		        <SeeMore />
-	        </div>
-	        <div className={`social-panel ${scrollY > height - innerHeight * 1.2 ? 'show' : null}`}>
-		        <SocialButtons vertical />
 	        </div>
 			<div className={`indicators ${-translateValue > panelWidth ? 'show' : null}`}>
 				<span>{index + 1} / {children.length}</span>
