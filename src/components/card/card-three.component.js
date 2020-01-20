@@ -15,7 +15,7 @@ const CardThree = () => (
 				<div className='dual-grid'>
 					<span>React/Redux</span>
 					<span>Javascript</span>
-					<span>CSS</span>
+					<span>CSS/SASS</span>
 					<span>Node</span>
 					<span>Express</span>
 					<span>SQL/NoSQL</span>

@@ -9,7 +9,6 @@ import CardTwo from '../../components/card/card-two.component';
 import CardThree from '../../components/card/card-three.component';
 import CarouselItemList from '../../components/carousel-item-list/carousel-item-list.component';
 
-import portfolio from '../../assets/portfolio.gif';
 import portfolio_800 from '../../assets/portfolio_800.gif';
 import portfolio_400 from '../../assets/portfolio_400.gif';
 import './home.styles.scss';
@@ -30,8 +29,7 @@ const Home = () => {
 							src={portfolio_400} 
 							srcSet={
 								`${portfolio_400} 400w, 
-								${portfolio_800} 800w, 
-								${portfolio} 1920w`
+								${portfolio_800} 800w`
 							} 
 							alt='fullstack developer'
 						/>
