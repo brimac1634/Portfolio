@@ -4,7 +4,7 @@ import { useScrollY } from '../../utils';
 
 import './enter.styles.scss';
 
-const Enter = ({ children }) => {
+const Enter = ({ children, enterStyle, ...otherProps }) => {
 	const [show, setShow] = useState(false);
 	const enter = useRef(null);
 	const scrollY = useScrollY();
@@ -14,13 +14,14 @@ const Enter = ({ children }) => {
 		const { top } = enter.current.getBoundingClientRect();
 		setShow(top < window.innerHeight)
 	}, [scrollY])
-
+	
 	return (
-		<div className='enter' ref={enter}>
-			{
-				show &&
-				children
-			}
+		<div 
+			className={`enter ${show ? enterStyle : null}`} 
+			ref={enter}
+			{ ...otherProps }
+		>
+			{ children }
 		</div>
 	)
 }
