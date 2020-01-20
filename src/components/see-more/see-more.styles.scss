@@ -4,6 +4,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 
 	.outer-eye {
 		width: 60%;
@@ -88,15 +89,16 @@
 
 	.more-line {
 		position: absolute;
-		top: -20%;
+		top: 0;
 		left: 50%;
 		transform: translateX(-50%);
 		text-align: center;
+		margin-top: 0;
 	}
 
 	.options {
 		position: absolute;
-		bottom: -20%;
+		bottom: 0;
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
