@@ -1,3 +1,35 @@
+@mixin scrimGradient($direction, $startColor) {
+  
+  $scrimCoordinates: (
+    0: 1,
+    19: 0.738,
+    34: 0.541,
+    47: 0.382,
+    56.5: 0.278,
+    65: 0.194,
+    73: 0.126,
+    80.2: 0.075,
+    86.1: 0.042,
+    91: 0.021,
+    95.2: 0.008,
+    98.2: 0.002,
+    100: 0
+  );
+  
+  $hue: hue($startColor);
+  $saturation: saturation($startColor);
+  $lightness: lightness($startColor);
+  $stops: ();
+  
+  @each $colorStop, $alphaValue in $scrimCoordinates {
+    $stop: hsla($hue, $saturation, $lightness, $alphaValue) percentage($colorStop/100);
+    $stops: append($stops, $stop, comma);
+  }
+  
+  background: linear-gradient(unquote($direction), $stops);
+  
+}
+
 .work-item {
 	width: 100%;
 	height: 100%;
@@ -11,17 +43,19 @@
 	background-position: center;
 	overflow: hidden;
 
-	&:hover {
+	@media screen and (min-width: 576px) {
+		&:hover {
 
-		.image {
-			&.show {
-				opacity: 0.1
+			.image {
+				&.show {
+					opacity: 0.1
+				}
 			}
-		}
 
-		.details {
-			opacity: 1;
-			transform: translateY(0);
+			.details {
+				opacity: 1;
+				transform: translateY(0);
+			}
 		}
 	}
 
@@ -42,6 +76,15 @@
 		}
 	}
 
+	.gradient {
+		position: absolute;
+		top: 40%;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		@include scrimGradient('to top', rgba(39, 35, 67, 0.3));
+	}
+
 	.details {
 		display: flex;
 		flex-direction: column;
@@ -50,6 +93,12 @@
 		transition: all 300ms ease-in-out;
 		transform: translateY(20px);
 		opacity: 0;
+
+		@media screen and (max-width: 575px) {
+			opacity: 1;
+			transform: none;
+			z-index: 0;
+		}
 
 		h3 {
 			margin: 5px 0;

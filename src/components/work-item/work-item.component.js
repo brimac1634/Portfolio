@@ -1,4 +1,5 @@
 import React from 'react';
+import MediaQuery from 'react-responsive';
 
 import './work-item.styles.scss';
 
@@ -10,6 +11,9 @@ const WorkItem = ({ image, title, description, setImageLoad, show, ...otherProps
 			alt={title} 
 			onLoad={()=>setImageLoad()} 
 		/>
+		<MediaQuery maxWidth={575}>
+			<div className='gradient' />
+		</MediaQuery>
 		{
 			show &&
 			<div className='details'>
