@@ -1,7 +1,7 @@
 export default {
 	SpentAll: {
 		title: 'SpentAll Expense Tracker',
-		description: 'SpentAll is a simple-to-use spending tracker allowing users to log expenditures, categorize them, track their habits using the analytical tools. Besides other customizations available, users can log their expenses in foreign currencies while traveling, while the app gets the latest conversion rate to log the expense in the user\'s home currency. This project was a personal project of mine, built for my own needs, but for the use of anyone.',
+		description: 'SpentAll is a simple-to-use spending tracker allowing users to log expenditures, categorize them, and track their habits using the analytical tools. Besides other customizations available, users can log their expenses in foreign currencies while traveling, while the app gets the latest conversion rate to log the expense in the user\'s home currency. This project was a personal project of mine, built for my own needs, but for the use of anyone.',
 		link: 'SpentAll.com',
 		video: 'https://player.vimeo.com/video/383003018',
 		info: [

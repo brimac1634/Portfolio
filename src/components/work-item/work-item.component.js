@@ -2,10 +2,10 @@ import React from 'react';
 
 import './work-item.styles.scss';
 
-const WorkItem = ({ image, title, description, setImageLoad, ...otherProps }) => (
+const WorkItem = ({ image, title, description, setImageLoad, show, ...otherProps }) => (
 	<div className='work-item' { ...otherProps }>
 		<img 
-			className='image' 
+			className={`image ${show ? 'show' : null}`}
 			src={image} 
 			alt={title} 
 			onLoad={()=>setImageLoad()} 
