@@ -40,15 +40,14 @@
 			width: 100%;
 		}
 
-		:first-child {
+		> :first-child {
 			width: 60%;
 			text-align: left;
-			line-height: 24px;
-			letter-spacing: 2px;
+			line-height: 30px;
+			font-size: 110%;
 
 			@media screen and (max-width: 991px) {
-				font-size: 95%;
-				line-height: 20px;
+				font-size: 100%;
 			}
 
 			@media screen and (max-width: 768px) {
