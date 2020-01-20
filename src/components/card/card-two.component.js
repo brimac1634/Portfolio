@@ -14,7 +14,7 @@ const CardTwo = () => (
 				<h3>...who <span className='gold'>PRIORITIZES</span>...</h3>
 				<div className='dual-grid spread'>
 					<span>Fast Performance</span>
-					<span>Responsive Layouts</span>
+					<span>Responsive Layout</span>
 					<span>Intuitive Design</span>
 					<span>Dynamic Content</span>
 				</div>

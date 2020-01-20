@@ -34,6 +34,7 @@
 		justify-content: center;
 
 		.text {
+			width: 100%;
 			opacity: 0;
 			animation-fill-mode: forwards;
 			animation: fade-in 600ms cubic-bezier(0.7, 0, 0.3, 1) 800ms forwards;
@@ -56,6 +57,7 @@
 				grid-template-columns: 1fr 1fr;
 
 				&.spread {
+					margin-top: 8%;
 					grid-row-gap: 20%;
 				}
 			}

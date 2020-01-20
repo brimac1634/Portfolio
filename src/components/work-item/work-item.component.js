@@ -10,10 +10,13 @@ const WorkItem = ({ image, title, description, setImageLoad, show, ...otherProps
 			alt={title} 
 			onLoad={()=>setImageLoad()} 
 		/>
-		<div className='details'>
-			<h3>{title}</h3>
-			<span>{description}</span>
-		</div>
+		{
+			show &&
+			<div className='details'>
+				<h3>{title}</h3>
+				<span>{description}</span>
+			</div>
+		}
 	</div>
 )
 
