@@ -1,7 +1,8 @@
 import React from 'react';
 import MediaQuery from 'react-responsive';
 
-import monitor from '../../assets/monitor.gif';
+import monitor_400 from '../../assets/monitor_400.gif';
+import monitor_800 from '../../assets/monitor_800.gif';
 import './about.styles.scss';
 
 const About = () => (
@@ -26,7 +27,11 @@ const About = () => (
 			<MediaQuery maxWidth={767}>
 				<div className='gif'>
 					<img 
-						src={monitor} 
+						src={monitor_800}
+						srcSet={
+							`${monitor_400} 400w,
+							${monitor_800} 800w`
+						}  
 						alt='monitor' 
 						className='monitor-gif' 
 					/>
@@ -51,7 +56,11 @@ const About = () => (
 		</div>
 		<MediaQuery minWidth={768}>
 			<img 
-				src={monitor} 
+				src={monitor_800}
+				srcSet={
+					`${monitor_400} 400w,
+					${monitor_800} 800w`
+				} 
 				alt='monitor' 
 				className='monitor-gif' 
 			/>

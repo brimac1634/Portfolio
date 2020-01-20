@@ -6,7 +6,7 @@ import workData from './work.data';
 import WorkItem from '../../components/work-item/work-item.component';
 import WorkDetail from '../work-detail/work-detail.component';
 
-import Card from '../../assets/card.gif';
+import Card from '../../assets/Card_1000.gif';
 import './work.styles.scss';
 
 const Work = ({ match, history }) => {

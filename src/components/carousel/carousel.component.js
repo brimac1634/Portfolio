@@ -6,8 +6,8 @@ import CarouselItem from '../carousel-item/carousel-item.component';
 import SocialButtons from '../social-buttons/social-buttons.component';
 import SeeMore from '../see-more/see-more.component';
 
-import portfolio from '../../assets/portfolio.gif';
-import portfolio_400 from '../../assets/portfolio_400.gif';
+import portfolio_800 from '../../assets/portfolio_800.gif';
+import portfolio_500 from '../../assets/portfolio_500.gif';
 import './carousel.styles.scss';
 
 const Carousel = ({ children, height, setHeight, index, setIndex }) => {
@@ -54,8 +54,8 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 				style={{opacity}}
 				src={portfolio_800}
 				srcSet={
-					`${portfolio_400} 400w,
-					${portfolio} 800w`
+					`${portfolio_500} 500w,
+					${portfolio_800} 800w`
 				} 
 				alt='fullstack developer' 
 				className='port'
