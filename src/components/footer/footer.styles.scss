@@ -35,39 +35,6 @@
 		}
 	}
 
-	.nav {
-		opacity: 0.6;
-		color: white;
-		transition: all 300ms ease-in-out;
-		animation: fade-in-pause 2000ms ease-in-out;
-
-		@keyframes fade-in-pause {
-			0% {
-				opacity: 0;
-			}
-			70% {
-				opacity: 0;
-			}
-			100% {
-				opacity: 0.6;
-			}
-		}
-
-		&:hover {
-			opacity: 1;
-		}
-
-		@media screen and (max-width: 991px) {
-			line-height: 28px;
-			font-size: 19px;
-		}
-
-		&.selected {
-			opacity: 1;
-			color: var(--color4);
-		}
-	}
-
 	@keyframes footer-slide-down {
 		0% {
 			transform: translateY(-100%);

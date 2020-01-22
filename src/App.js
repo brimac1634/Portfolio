@@ -5,6 +5,8 @@ import MediaQuery from 'react-responsive';
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
+import WorkNav from './components/nav/work-nav.component';
+import AboutNav from './components/nav/about-nav.component';
 import SocialButtons from './components/social-buttons/social-buttons.component';
 import Loader from './components/loader/loader.component';
 import Home from './pages/home/home.component';
@@ -20,6 +22,7 @@ const App = ({ location }) => {
         location.pathname !== '/about' &&
         <div className='side-panel' />
       }
+      <Footer />
       <ErrorBoundary>
         <Suspense fallback={<Loader />}>
           <Switch>
@@ -43,7 +46,17 @@ const App = ({ location }) => {
           <SocialButtons />
         </div>
       </MediaQuery>
-      <Footer />
+      {
+        location.pathname === '/' &&
+        <MediaQuery minWidth={992}>
+          <div className='nav-box top'>
+            <WorkNav />
+          </div>
+          <div className='nav-box bottom'>
+            <AboutNav />
+          </div>
+        </MediaQuery>
+      }
       <Header />
     </div>
   );

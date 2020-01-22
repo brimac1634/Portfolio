@@ -86,4 +86,24 @@ a {
       transform: translateX(0);
     }
   }
+
+  .nav-box {
+    width: 10%;
+    position: fixed;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+    padding: 3% 0;
+
+
+    &.top {
+      top: 0;
+    }
+
+    &.bottom {
+      bottom: 0;
+      align-items: flex-end;
+    }
+  }
 }

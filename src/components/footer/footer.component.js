@@ -1,27 +1,34 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import MediaQuery from 'react-responsive'; 
 
+import { useWindowSize } from '../../utils';
+
 import SocialButtons from '../social-buttons/social-buttons.component';
+import WorkNav from '../nav/work-nav.component';
+import AboutNav from '../nav/about-nav.component';
 
 import './footer.styles.scss';
 
 const Footer = ({ location }) => {
-	const path = location.pathname.split('/')[1];
+	const [innerWidth] = useWindowSize();
+	const hideNav = location.pathname === '/' && innerWidth > 991;
 	return (
 		<div className={`footer ${location.pathname === '/' ? 'is-home' : null}`}>
-			<Link to='/work' className={`nav ${path === 'work' ? 'selected' : null}`}>
-				work
-			</Link>
+			{
+				!hideNav &&
+				<WorkNav />
+			}
 			{
 				location.pathname !== '/' &&
 				<MediaQuery minWidth={992}>
 					<SocialButtons vertical />
 				</MediaQuery>
 			}
-			<Link to='/about' className={`nav ${path === 'about' ? 'selected' : null}`}>
-				about
-			</Link>
+			{
+				!hideNav &&
+				<AboutNav />
+			}
 		</div>
 	)
 }
