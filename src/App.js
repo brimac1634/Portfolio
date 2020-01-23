@@ -22,7 +22,9 @@ const App = ({ location }) => {
         location.pathname !== '/about' &&
         <div className='side-panel' />
       }
-      <Footer />
+      <MediaQuery minWidth={992}>
+        <Footer />
+      </MediaQuery>
       <ErrorBoundary>
         <Suspense fallback={<Loader />}>
           <Switch>
@@ -45,6 +47,9 @@ const App = ({ location }) => {
         <div className='bottom-panel'>
           <SocialButtons />
         </div>
+      </MediaQuery>
+      <MediaQuery maxWidth={991}>
+        <Footer />
       </MediaQuery>
       {
         location.pathname === '/' &&

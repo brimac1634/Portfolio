@@ -3,7 +3,7 @@ export default {
 		title: 'SpentAll Expense Tracker',
 		description: 'SpentAll is a simple-to-use spending tracker allowing users to log expenditures, categorize them, and track their habits using the analytical tools. Besides other customizations available, users can log their expenses in foreign currencies while traveling, while the app gets the latest conversion rate to log the expense in the user\'s home currency. This project was a personal project of mine, built for my own needs, but for the use of anyone.',
 		link: 'SpentAll.com',
-		video: 'https://player.vimeo.com/video/383003018',
+		video: 'SpentAll-demo.mp4',
 		info: [
 			['Development', 'Brian MacPherson'],
 			['Design', 'Brian MacPherson'],
@@ -15,7 +15,7 @@ export default {
 		title: 'Too Far East Barber & Co.',
 		description: 'Too Far East Barber & Co. is a Hong Kong based barber shop. This project was to serve as their general website, providing details, updates, and an avenue to making bookings.',
 		link: 'TooFarEastBarber.com',
-		video: 'https://player.vimeo.com/video/383012641',
+		video: 'TFE-demo.mp4',
 		info: [
 			['Client', 'Too Far East Barber & Co.'],
 			['Development', 'Brian MacPherson'],
@@ -39,7 +39,7 @@ export default {
 	NetRoadshowTeleprompter: {
 		title: 'NetRoadshow Teleprompter',
 		description: 'This Teleprompter is an iPad + iPhone combination app that was to serve the film crews at NetRoadshow with a more customizable teleprompter solution. An iPad, while being mounted to a camera can display a script with a number of different customization options, while another iPad or iPhone can act as a remote control for the speaker. This allows the speaker to directly control the speed, pausing, and starting of the script from a podium.',
-		video: 'https://player.vimeo.com/video/383019824',
+		video: 'Tele-demo.mp4',
 		info: [
 			['Employer', 'NetRoadshow, Inc.'],
 			['Development', 'Brian MacPherson'],
@@ -51,7 +51,7 @@ export default {
 	NetRoadshowMiniprogram: {
 		title: 'NetRoadshow Miniprogram',
 		description: 'This project was for a Wechat Miniprogram (The mini apps built into wechat). The purpose of the miniprogram was to provide a point of contact and interactivity for clients in the mainland China market.',
-		video: 'https://player.vimeo.com/video/383444447',
+		video: 'Mini-demo.mp4',
 		info: [
 			['Employer', 'NetRoadshow, Inc.'],
 			['Development', 'Brian MacPherson and Team'],
