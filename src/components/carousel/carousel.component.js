@@ -70,13 +70,13 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 	        </div>
 	        <div className='more' style={{
 	        	opacity: endOpacity,
-	        	visibility: endOpacity > 0.05 ? 'visible' : 'hidden'
+	        	visibility: endOpacity > 0.001 ? 'visible' : 'hidden'
 	        }}>
 		        <SeeMore />
 	        </div>
 	        <div className='social-panel' style={{
 	        	opacity: endOpacity,
-	        	visibility: endOpacity > 0.05 ? 'visible' : 'hidden'
+	        	visibility: endOpacity > 0.001 ? 'visible' : 'hidden'
 	        }}>
 		        <SocialButtons vertical />
 	        </div>
