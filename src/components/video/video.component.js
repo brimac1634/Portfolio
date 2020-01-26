@@ -21,7 +21,6 @@ const Video = ({ url }) => {
 		<div className='video'>
 			<ReactPlayer 
 				url={video}
-				muted
 				controls
 				playsinline 
 				width='100%'

@@ -17,9 +17,9 @@ const CardThree = () => (
 					<span>Javascript</span>
 					<span>CSS/SASS</span>
 					<span>Node</span>
-					<span>Express</span>
+					<span>SEO</span>
 					<span>SQL/NoSQL</span>
-					<span>Security</span>
+					<span>Next/Gatsby</span>
 					<span>Swift</span>
 					<span>Git</span>
 					<span>Docker</span>
