@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/storage';
+import 'firebase/analytics';
 
 const firebaseConfig = {
   apiKey: "AIzaSyD5npZORRJP39jShinYqvzikSSh04af4lQ",
@@ -17,5 +18,6 @@ export const getVideoURL = async videoName => {
 }
 
 firebase.initializeApp(firebaseConfig);
+firebase.analytics()
 
 export const storageRef = firebase.storage().ref();
