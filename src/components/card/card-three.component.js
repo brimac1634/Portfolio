@@ -17,11 +17,11 @@ const CardThree = () => (
 					<span>Javascript</span>
 					<span>CSS/SASS</span>
 					<span>Node</span>
-					<span>SEO</span>
+					<span>Testing</span>
 					<span>SQL/NoSQL</span>
-					<span>Next/Gatsby</span>
-					<span>Swift</span>
-					<span>Git</span>
+					<span>SSR/Next/Gatsby</span>
+					<span>Swift/iOS</span>
+					<span>Git/CI/CD</span>
 					<span>Docker</span>
 				</div>
 			</div>
