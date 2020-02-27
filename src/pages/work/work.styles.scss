@@ -51,14 +51,8 @@
 			animation-fill-mode: forwards;
 		}
 
-		.holder {
-			background-image: url('../../assets/Card_1000.gif');
-			background-size: cover;
-			background-position: center;
-
-			&.holder1 {
-				grid-area: holder1;
-			}
+		.holder1 {
+			grid-area: holder1;
 		}
 	}
 }

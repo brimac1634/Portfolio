@@ -17,7 +17,7 @@ const Enter = ({ children, enterStyle, ...otherProps }) => {
 		} else {
 			setShow(top + height * 0.3 < window.innerHeight)
 		}
-	}, [scrollY])
+	}, [scrollY,show])
 	
 	return (
 		<div 

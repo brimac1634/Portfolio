@@ -3,6 +3,8 @@ import ReactPlayer from 'react-player'
 
 import { getVideoURL } from '../../firebase/firebase.utils';
 
+import FloatersContainer from '../floaters-container/floaters-container.component';
+
 import './video.styles.scss';
 
 const Video = ({ url }) => {
@@ -27,7 +29,7 @@ const Video = ({ url }) => {
 				height='100%'
 				onReady={()=>setIsLoading(false)}
 			/>
-			<div className={`loader-gif ${isLoading ? 'show' : null}`} />
+			<FloatersContainer show={isLoading} />
 		</div>
 	)
 }

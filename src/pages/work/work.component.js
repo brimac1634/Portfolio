@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import workData from './work.data';
 
+import FloatersContainer from '../../components/floaters-container/floaters-container.component';
 import WorkItem from '../../components/work-item/work-item.component';
 import WorkDetail from '../work-detail/work-detail.component';
 
@@ -29,7 +30,7 @@ const Work = ({ match, history }) => (
 							/>
 						))
 					}
-					<div className='holder holder1'/>
+					<FloatersContainer otherClasses='holder1' show />
 				</div>
 			)}/>
 			<Route path={`${match.path}/:work`} component={WorkDetail}/>

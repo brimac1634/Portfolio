@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import FloatersContainer from '../../components/floaters-container/floaters-container.component';
+
 import './carousel-item.styles.scss';
 
 const CarouselItem = ({ isVisible, children }) => {
@@ -18,7 +20,7 @@ const CarouselItem = ({ isVisible, children }) => {
 				setIsShowing(false)
 			}}
 		>
-			<div className='background-vid' />
+			<FloatersContainer show otherClasses='background-canvas' />
 			<div className={`inner-item ${isShowing ? 'show' : 'hide'}`}>
 				{
 					isShowing &&

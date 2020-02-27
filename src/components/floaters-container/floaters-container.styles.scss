@@ -1,0 +1,17 @@
+.floaters-container {
+	position: relative;
+	overflow: hidden;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 300ms ease-in-out;
+
+	&.show {
+		opacity: 1;
+	}
+
+	.floaters {
+		position: absolute;
+		top: -5%;
+		left: -5%;
+	}
+}
