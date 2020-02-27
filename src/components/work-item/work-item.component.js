@@ -9,7 +9,7 @@ const WorkItem = ({ image, title, description, ...otherProps }) => {
 	const [loadComplete, setLoadComplete] = useState(false);
 	return (
 		<div className='work-item' { ...otherProps }>
-			<FloatersContainer show={!loadComplete} />
+			<FloatersContainer show={!loadComplete} otherClasses='floater-load' />
 			<img 
 				className={`image ${loadComplete ? 'show' : null}`}
 				src={image} 
