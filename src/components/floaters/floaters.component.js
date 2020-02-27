@@ -13,8 +13,10 @@ const FLoaters = ({ rect, ...otherProps }) => {
 		const c = canvas.getContext('2d')
 		let floaterArray = [];
 
+		const radiusConstant = (window.innerWidth + window.innerHeight) / 2
+
 		for (var i = 0; i < Math.ceil(((width + height) / 2) * 0.15); i++) {
-	        const radius = Math.random() * window.innerWidth * 0.003;
+	        const radius = Math.random() * radiusConstant * 0.004;
 	        const x = (Math.random() * (width - radius * 2)) + radius;
 	        const y = (Math.random() * (height - radius * 2)) + radius;
 	        const dx = (Math.random() - 0.5) * 0.5;
