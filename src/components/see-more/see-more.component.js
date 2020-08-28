@@ -81,7 +81,7 @@ const SeeMore = () => {
 			</div>
 			<h2 className='more-line'>see more</h2>
 			<div className='options'>
-				<Link to='/work'>work</Link>
+				<Link to='/projects'>projects</Link>
 				<Link to='/about'>about</Link>
 			</div>
 		</div>

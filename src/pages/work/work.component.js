@@ -13,24 +13,29 @@ const Work = ({ match, history }) => (
 	<div className='work'>
 		<Switch>
 			<Route exact path={match.path} render={()=>(
-				<div className='work-collection'>
-					{
-						workData &&
-						workData.map(({ route, gridArea, image, title, description}, i) => (
-							<WorkItem 
-								key={title}
-								onClick={()=>history.push(`${match.path}${route}`)}
-								style={{
-									gridArea,
-									animationDelay: `${(i + 1) * 0.2}s`
-								}}
-								image={image} 
-								title={title} 
-								description={description}
-							/>
-						))
-					}
-					<FloatersContainer otherClasses='holder1' show />
+				<div>
+					<div className='work-header'>
+						<span>A handful of personal projects<br/> from my free time...</span>
+					</div>
+					<div className='work-collection'>
+						{
+							workData &&
+							workData.map(({ route, gridArea, image, title, description}, i) => (
+								<WorkItem 
+									key={title}
+									onClick={()=>history.push(`${match.path}${route}`)}
+									style={{
+										gridArea,
+										animationDelay: `${(i + 1) * 0.2}s`
+									}}
+									image={image} 
+									title={title} 
+									description={description}
+								/>
+							))
+						}
+						<FloatersContainer otherClasses='holder1' show />
+					</div>
 				</div>
 			)}/>
 			<Route path={`${match.path}/:work`} component={WorkDetail}/>

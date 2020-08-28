@@ -7,10 +7,10 @@ const WorkNav = ({ location }) => {
 	const path = location.pathname.split('/')[1];
 	return (
 		<Link 
-			to='/work' 
-			className={`nav ${path === 'work' ? 'selected' : null}`}
+			to='/projects' 
+			className={`nav ${path === 'projects' ? 'selected' : null}`}
 		>
-			work
+			projects
 		</Link>
 	)
 }

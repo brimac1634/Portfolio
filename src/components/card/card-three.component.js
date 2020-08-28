@@ -16,12 +16,12 @@ const CardThree = () => (
 					<span>React/Redux</span>
 					<span>Javascript</span>
 					<span>CSS/SASS</span>
-					<span>Node</span>
-					<span>Testing</span>
+					<span>Node/Express</span>
+					<span>Auto Testing</span>
 					<span>SQL/NoSQL</span>
-					<span>SSR/Next/Gatsby</span>
-					<span>Swift/iOS</span>
-					<span>Git/CI/CD</span>
+					<span>CI/CD</span>
+					<span>Flutter/Dart</span>
+					<span>Git</span>
 					<span>Docker</span>
 				</div>
 			</div>

@@ -29,7 +29,7 @@ const App = ({ location }) => {
         <Suspense fallback={<Loader />}>
           <Switch>
               <Route exact path='/' component={Home}/>
-              <Route path='/work' component={Work}/>
+              <Route path='/projects' component={Work}/>
               <Route path='/about' component={About}/>
               <Redirect to='/' />
           </Switch>
