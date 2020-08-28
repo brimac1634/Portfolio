@@ -14,15 +14,15 @@ const CardThree = () => (
 				<h3>...with <span className='gold'>EXPERIENCE</span> in...</h3>
 				<div className='dual-grid'>
 					<span>React/Redux</span>
-					<span>Javascript</span>
-					<span>CSS/SASS</span>
 					<span>Node/Express</span>
-					<span>Auto Testing</span>
+					<span>Javascript</span>
+					<span>Docker</span>
+					<span>CSS/SASS</span>
 					<span>SQL/NoSQL</span>
 					<span>CI/CD</span>
 					<span>Flutter/Dart</span>
 					<span>Git</span>
-					<span>Docker</span>
+					<span>Swift/iOS</span>
 				</div>
 			</div>
 		</div>
