@@ -1,5 +1,12 @@
 export default [
 	{
+		title: 'Breathe Calm',
+		description: 'iOS and Android App',
+		image: require("../../assets/breathe.png"),
+		gridArea: 'breathe',
+		route: '/BreatheCalm'
+	},
+	{
 		title: 'SpentAll',
 		description: 'Web App',
 		image: require("../../assets/SpentAll.png"),
@@ -20,13 +27,6 @@ export default [
 		gridArea: 'tele',
 		route: '/NetRoadshowTeleprompter'
 	},
-	// {
-	// 	title: 'Bon Vivant',
-	// 	description: 'Retail Website',
-	// 	image: require("../../assets/cover.jpg"),
-	// 	gridArea: 'bon',
-	// 	route: '/BonVivantCollection'
-	// },
 	{
 		title: 'NRS Mini',
 		description: 'Wechat Miniprogram',

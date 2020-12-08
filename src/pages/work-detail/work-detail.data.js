@@ -1,4 +1,15 @@
 export default {
+	BreatheCalm: {
+		title: 'Breathe Calm',
+		description: 'Breathe Calm is an adjustable breath guide with a calming particle animation. Breathe in, breathe out, and pause durations can all be adjusted to fit a specific breathing patter. A gradual vibration pattern can be toggled to allow for breathing exercises with eyes closed.',
+		video: 'SpentAll-demo.mp4',
+		info: [
+			['Development', 'Brian MacPherson'],
+			['Design', 'Brian MacPherson'],
+			['Technology', 'Flutter (Dart)'],
+			['Systems', 'iOS and Android'],
+		]
+	},
 	SpentAll: {
 		title: 'SpentAll Expense Tracker',
 		description: 'SpentAll is a simple-to-use spending tracker allowing users to log expenditures, categorize them, and track their habits using the analytical tools. Besides other customizations available, users can log their expenses in foreign currencies while traveling, while the app gets the latest conversion rate to log the expense in the user\'s home currency. This project was a personal project of mine, built for my own needs, but for the use of anyone.',

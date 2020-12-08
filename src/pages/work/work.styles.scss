@@ -18,10 +18,12 @@
 		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
-		grid-template-rows: repeat(4, 1fr);
+		grid-template-rows: repeat(6, 1fr);
 		grid-template-areas: 
-			"spent spent too too"
-			"spent spent too too"
+			"breathe breathe spent spent"
+			"breathe breathe spent spent"
+			"holder2 holder2 too too"
+			"holder2 holder2 too too"
 			"tele tele holder1 wechat"
 			"tele tele holder1 wechat";
 		grid-column-gap: 0.8em;
@@ -30,8 +32,10 @@
 
 		@media screen and (max-width: 575px) {
 			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(8, 1fr);
+			grid-template-rows: repeat(10, 1fr);
 			grid-template-areas: 
+				"breathe breathe"
+				"breathe breathe"
 				"spent spent"
 				"spent spent"
 				"too too"
@@ -60,6 +64,10 @@
 
 		.holder1 {
 			grid-area: holder1;
+		}
+
+		.holder2 {
+			grid-area: holder2;
 		}
 	}
 }

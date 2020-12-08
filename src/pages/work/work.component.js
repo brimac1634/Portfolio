@@ -35,6 +35,7 @@ const Work = ({ match, history }) => (
 							))
 						}
 						<FloatersContainer otherClasses='holder1' show />
+						<FloatersContainer otherClasses='holder2' show />
 					</div>
 				</div>
 			)}/>
