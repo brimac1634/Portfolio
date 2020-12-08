@@ -6,6 +6,7 @@ import workData from './work.data';
 import FloatersContainer from '../../components/floaters-container/floaters-container.component';
 import WorkItem from '../../components/work-item/work-item.component';
 import WorkDetail from '../work-detail/work-detail.component';
+import AdditionalInformation from '../additional-information/additional-information.component';
 
 import './work.styles.scss';
 
@@ -39,6 +40,7 @@ const Work = ({ match, history }) => (
 					</div>
 				</div>
 			)}/>
+			<Route path={`${match.path}/:work/:additional`} component={AdditionalInformation}/>
 			<Route path={`${match.path}/:work`} component={WorkDetail}/>
 			<Redirect to={match.path} />
 		</Switch>

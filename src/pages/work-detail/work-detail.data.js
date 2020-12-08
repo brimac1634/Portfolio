@@ -8,6 +8,9 @@ export default {
 			['Design', 'Brian MacPherson'],
 			['Technology', 'Flutter (Dart)'],
 			['Systems', 'iOS and Android'],
+		],
+		additionalPages: [
+			['Privacy Policy', 'policy']
 		]
 	},
 	SpentAll: {

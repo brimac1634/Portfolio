@@ -41,3 +41,7 @@ export const useMousePosition = () => {
   }, [])
   return mouse
 }
+
+export const camelCaseToString = camel => {
+  return camel.replace(/([A-Z])/g, ' $1')
+}

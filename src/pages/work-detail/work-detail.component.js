@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import workDetailData from './work-detail.data';
 
@@ -6,7 +7,7 @@ import Video from '../../components/video/video.component';
 
 import './work-detail.styles.scss';
 
-const WorkDetail = ({ match }) => {
+const WorkDetail = ({ match, location }) => {
 	const work = workDetailData[match.params.work];
 
 	return (
@@ -37,6 +38,19 @@ const WorkDetail = ({ match }) => {
 							<div className='detail-item' key={i}>
 								<span>{info[0]}</span>
 								<span>{info[1]}</span>
+							</div>
+						))
+					}
+					{
+						work.additionalPages &&
+						work.additionalPages.map((info, i) => (
+							<div className='detail-item' key={i}>
+								<span>{info[0]}</span>
+								<Link 
+									to={`${location.pathname}/${info[1]}`} 
+								>
+									{info[1]}
+								</Link>
 							</div>
 						))
 					}
