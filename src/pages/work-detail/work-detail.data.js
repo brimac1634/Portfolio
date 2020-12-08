@@ -2,7 +2,7 @@ export default {
 	BreatheCalm: {
 		title: 'Breathe Calm',
 		description: 'Breathe Calm is an adjustable breath guide with a calming particle animation. Breathe in, breathe out, and pause durations can all be adjusted to fit a specific breathing patter. A gradual vibration pattern can be toggled to allow for breathing exercises with eyes closed.',
-		video: 'SpentAll-demo.mp4',
+		video: 'breathe-calm-demo.mp4',
 		info: [
 			['Development', 'Brian MacPherson'],
 			['Design', 'Brian MacPherson'],
