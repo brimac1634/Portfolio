@@ -9,9 +9,7 @@ export default {
 			['Technology', 'Flutter (Dart)'],
 			['Systems', 'iOS and Android'],
 		],
-		additionalPages: [
-			['Privacy Policy', 'policy']
-		]
+		privacy: true
 	},
 	SpentAll: {
 		title: 'SpentAll Expense Tracker',

@@ -42,17 +42,15 @@ const WorkDetail = ({ match, location }) => {
 						))
 					}
 					{
-						work.additionalPages &&
-						work.additionalPages.map((info, i) => (
-							<div className='detail-item' key={i}>
-								<span>{info[0]}</span>
-								<Link 
-									to={`${location.pathname}/${info[1]}`} 
-								>
-									{info[1]}
-								</Link>
-							</div>
-						))
+						work.privacy &&
+						<div className='detail-item'>
+							<span>Privacy Policy</span>
+							<Link 
+								to={`${location.pathname}/privacy-policy`} 
+							>
+								here
+							</Link>
+						</div>
 					}
 				</div>
 			</div>
