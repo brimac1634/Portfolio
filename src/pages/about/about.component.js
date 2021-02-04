@@ -50,7 +50,7 @@ const About = () => (
 				</div>
 				<div className='row'>
 					<span>Phone</span>
-					<a href='tel:+852-6897-2280'>+852-6897-2280</a>
+					<a href='tel:+852-6897-1180'>+852-6897-1180</a>
 				</div>
 			</div>
 		</div>
