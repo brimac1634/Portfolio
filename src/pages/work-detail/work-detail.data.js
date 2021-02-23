@@ -1,4 +1,17 @@
 export default {
+	JoeNBrownArt: {
+		title: 'Joe N. Brown Art',
+		description: 'Gallery website built for a Hong Kong based artist, showcasing illustrations, paintings, characters, and concepts art.',
+		link: 'joenbrownart.com',
+		video: 'joenbrownart-demo.mp4',
+		info: [
+			['Development', 'Brian MacPherson'],
+			['Design', 'Joe N. Brown'],
+			['Front End', 'React (Typescript)'],
+			['Back End', 'Firebase']
+		],
+		privacy: false
+	},
 	BreatheCalm: {
 		title: 'Breathe Calm',
 		description: 'Breathe Calm is an adjustable breath guide with a calming particle animation. Breathe in, breathe out, and pause durations can all be adjusted to fit a specific breathing patter. A gradual vibration pattern can be toggled to allow for breathing exercises with eyes closed.',

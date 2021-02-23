@@ -1,5 +1,12 @@
 export default [
 	{
+		title: 'Joe N. Brown Art',
+		description: 'Website',
+		image: require("../../assets/joe.png"),
+		gridArea: 'joe',
+		route: '/JoeNBrownArt'
+	},
+	{
 		title: 'Breathe Calm',
 		description: 'iOS and Android App',
 		image: require("../../assets/breathe.png"),

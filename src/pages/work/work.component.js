@@ -16,7 +16,7 @@ const Work = ({ match, history }) => (
 			<Route exact path={match.path} render={()=>(
 				<div>
 					<div className='work-header'>
-						<span>A handful of personal projects<br/> from my free time...</span>
+						<span>A handful of personal projects...</span>
 					</div>
 					<div className='work-collection'>
 						{
