@@ -13,7 +13,7 @@ const CardThree = () => (
 			<div className='text'>
 				<h3>...with <span className='gold'>EXPERIENCE</span> in...</h3>
 				<div className='dual-grid'>
-					<span>React/Redux</span>
+					<span>React/Gatsby</span>
 					<span>Node/Express</span>
 					<span>Javascript/Typescript</span>
 					<span>Docker</span>
