@@ -1,44 +1,46 @@
-export default [
+const WORK_DATA = [
 	{
 		title: 'Joe N. Brown Art',
 		description: 'Website',
-		image: require("../../assets/joe.png"),
+		image: 'joe.png',
 		gridArea: 'joe',
 		route: '/JoeNBrownArt'
 	},
 	{
 		title: 'Breathe Calm',
 		description: 'iOS and Android App',
-		image: require("../../assets/breathe.png"),
+		image: 'breathe.png',
 		gridArea: 'breathe',
 		route: '/BreatheCalm'
 	},
 	{
 		title: 'SpentAll',
 		description: 'Web App',
-		image: require("../../assets/SpentAll.png"),
+		image: 'SpentAll.png',
 		gridArea: 'spent',
 		route: '/SpentAll'
 	},
 	{
 		title: 'Too Far East',
 		description: 'Website',
-		image: require("../../assets/TFE.png"),
+		image: 'TFE.png',
 		gridArea: 'too',
 		route: '/TooFarEastBarber'
 	},
 	{
 		title: 'NRS Tele',
 		description: 'Tablet + Mobile App',
-		image: require("../../assets/tele.png"),
+		image: 'tele.png',
 		gridArea: 'tele',
 		route: '/NetRoadshowTeleprompter'
 	},
 	{
 		title: 'NRS Mini',
 		description: 'Wechat Miniprogram',
-		image: require("../../assets/Mini.png"),
+		image: 'Mini.png',
 		gridArea: 'wechat',
 		route: '/NetRoadshowMiniprogram'
 	},
 ];
+
+export default WORK_DATA;

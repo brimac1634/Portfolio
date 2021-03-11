@@ -1,4 +1,4 @@
-export default {
+const WORK_DETAILS = {
 	JoeNBrownArt: {
 		title: 'Joe N. Brown Art',
 		description: 'Gallery website built for a Hong Kong based artist, showcasing illustrations, paintings, characters, and concepts art.',
@@ -86,3 +86,5 @@ export default {
 		]
 	}
 }
+
+export default WORK_DETAILS;

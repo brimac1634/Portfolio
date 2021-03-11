@@ -12,7 +12,7 @@ const WorkItem = ({ image, title, description, ...otherProps }) => {
 			<FloatersContainer show={!loadComplete} otherClasses='floater-load' />
 			<img 
 				className={`image ${loadComplete ? 'show' : null}`}
-				src={image} 
+				src={require(`../../assets/${image}`)} 
 				alt={title} 
 				onLoad={()=>setLoadComplete(true)} 
 			/>

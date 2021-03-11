@@ -4,17 +4,17 @@
   "private": true,
   "homepage": "https://bmacpherson.com",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.2",
-    "@testing-library/react": "^10.4.7",
-    "@testing-library/user-event": "^12.1.0",
-    "firebase": "^7.17.1",
-    "node-sass": "^4.14.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-player": "^2.6.0",
-    "react-responsive": "^8.1.0",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.3",
+    "firebase": "^8.2.10",
+    "node-sass": "^5.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-player": "^2.9.0",
+    "react-responsive": "^8.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
