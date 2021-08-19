@@ -49,6 +49,15 @@ const About = () => (
 					<span>Phone</span>
 					<a href='tel:+852-6897-1180'>+852-6897-1180</a>
 				</div>
+				<div className='row'>
+					<a 
+						href='https://noblewills.com' 
+						target='_blank' 
+						rel='noopener noreferrer'
+					>
+						Co-founder of NobleWills
+					</a>
+				</div>
 			</div>
 		</div>
 		<MediaQuery minWidth={768}>
