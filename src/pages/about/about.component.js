@@ -47,7 +47,7 @@ const About = () => (
 				</div>
 				<div className='row'>
 					<span>Phone</span>
-					<a href='tel:+852-6897-1180'>+852-6897-1180</a>
+					<a href='tel:+852-6708-1340'>+852-6708-1340</a>
 				</div>
 				<div className='row'>
 					<a 

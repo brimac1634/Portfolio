@@ -36,7 +36,7 @@ const BreatheCalm = () => {
                 <br/>Happy Valley, Hong Kong
                 
                 <br/><br/>
-                <a href='tel:+852-6897-1180'>+852-6897-1180</a>
+                <a href='tel:+852-6708-1340'>+852-6708-1340</a>
                 <br/>
                 <a 
                     href='mailto:brimac1634@gmail.com' 
