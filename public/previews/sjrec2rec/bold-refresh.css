@@ -1,0 +1,75 @@
+/* Bold only: two cities, a people-led composition and restrained motion. */
+.bold .hero-team-link { display: block; margin-top: 26px; font-size: 12px; text-decoration: underline; text-underline-offset: 4px; }
+.bold .bold-collage { min-height: 530px; }
+.bold .skyline { position: absolute; overflow: hidden; background: #ddd; }
+.bold .skyline img { width: 100%; height: 100%; filter: saturate(.65); }
+.bold .skyline-hk { top: 0; left: 0; width: 83%; height: 330px; border-radius: 130px 130px 26px 26px; }
+.bold .skyline-hk img { object-position: 52% center; }
+.bold .skyline-dubai { right: 0; top: 260px; width: 75%; height: 245px; border: 7px solid var(--cream); border-radius: 32px; --float-duration: 14s; --float-delay: -5s; }
+.bold .skyline figcaption { position: absolute; left: 18px; bottom: 18px; background: var(--cream); padding: 5px 12px; border-radius: 20px; color: #000; font-size: 10px; }
+.bold .skyline-hk figcaption { top: 24px; bottom: auto; left: 50%; transform: translateX(-50%); white-space: nowrap; }
+.bold .location-pill { top: 222px; left: -12px; z-index: 2; transform: none; padding: 15px 22px; }
+.bold .experience-badge { bottom: 12px; left: 0; width: 25%; display: block; padding: 0; }
+.bold .experience-badge strong { font-size: 62px; }
+.bold .experience-badge span { display: block; margin-top: 6px; }
+.bold .motion-toggle { background: transparent; font-size: 10px; text-decoration: underline; text-underline-offset: 4px; min-height: 44px; padding: 8px 0; }
+.bold .bold-ribbon span + span { border-left: 1px solid #ffffff70; padding-left: 5%; }
+.bold .bold-people { display: grid; grid-template-columns: 1.1fr 1fr; gap: 8%; align-items: center; padding-top: 40px; padding-bottom: 110px; }
+.bold .team-portraits { position: relative; height: 540px; }
+.bold .team-portrait { position: absolute; width: 44%; overflow: hidden; border-radius: 22px; background: #e5e1d9; box-shadow: 0 18px 35px #261c1012; }
+.bold .team-portrait img { margin-top: 36px; width: 100%; height: calc(100% - 36px); filter: grayscale(1); object-position: center 30%; }
+.bold .team-portrait figcaption { position: absolute; top: 0; left: 0; right: 0; background: #e5e1d9; height: 36px; padding: 10px 12px; font-size: 8px; line-height: 16px; color: #514b43; white-space: nowrap; }
+.bold .portrait-one { left: 0; top: 20px; height: 315px; --float-duration: 13s; }
+.bold .portrait-two { right: 0; top: 105px; height: 270px; --float-duration: 15s; --float-delay: -6s; }
+.bold .portrait-three { left: 19%; bottom: 0; height: 270px; --float-duration: 12s; --float-delay: -3s; }
+.bold .portrait-three img { object-position: center 25%; }
+.bold .team-copy h2 { font-size: clamp(52px, 5.3vw, 78px); }
+.bold .team-copy > p:not(.kicker) { font-size: 14px; margin-top: 24px; }
+.bold .team-copy .action { margin-top: 28px; }
+.bold .team-copy > p.team-placeholder-note { font-size: 11px; color: #625b50; }
+.bold.motion-ready [data-float] { animation: bold-drift var(--float-duration, 12s) ease-in-out var(--float-delay, 0s) infinite; animation-play-state: paused; }
+.bold.motion-ready [data-motion-region].motion-visible [data-float] { animation-play-state: running; }
+.bold.motion-paused [data-float], .bold.motion-hidden [data-float] { animation-play-state: paused !important; }
+/* Entrance animations never hide content before JavaScript or an observer runs. */
+.bold .bold-entering { animation: bold-enter .75s ease-out both; }
+.bold .bold-entering .quote-card:nth-child(2), .bold .bold-entering .update-card:nth-child(2) { animation: bold-enter .8s .08s ease-out both; }
+.bold .bold-entering .update-card:nth-child(3) { animation: bold-enter .8s .16s ease-out both; }
+@keyframes bold-drift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@keyframes bold-enter { from { opacity: .2; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 1100px) and (min-width: 801px) {
+  .bold .bold-collage { min-height: 490px; }
+  .bold .skyline-hk { height: 300px; }
+  .bold .skyline-dubai { top: 245px; height: 225px; }
+  .bold .location-pill { top: 210px; font-size: 10px; padding: 12px 16px; }
+  .bold .team-portraits { height: 470px; }
+  .bold .portrait-one { height: 265px; }
+  .bold .portrait-two, .bold .portrait-three { height: 230px; }
+}
+@media (max-width: 800px) {
+  .bold .bold-collage { min-height: 440px; max-width: 540px; }
+  .bold .skyline-hk { height: 280px; border-radius: 110px 110px 24px 24px; }
+  .bold .skyline-dubai { top: 215px; height: 210px; border-width: 5px; }
+  .bold .location-pill { left: 0; top: 190px; padding: 13px 18px; font-size: 10px; }
+  .bold .experience-badge { bottom: 12px; left: 0; }
+  .bold .experience-badge strong { font-size: 54px; }
+  .bold .hero-team-link { font-size: 11px; }
+  .bold .bold-ribbon span + span { border: 0; padding: 0; }
+  .bold .bold-people { grid-template-columns: 1fr; gap: 38px; padding-top: 20px; padding-bottom: 65px; }
+  .bold .team-portraits { width: 100%; max-width: 490px; height: 480px; margin: auto; }
+  .bold .team-copy { max-width: 540px; }
+  .bold .portrait-one { height: 285px; }
+  .bold .portrait-two { height: 250px; }
+  .bold .portrait-three { height: 245px; }
+  .bold .team-copy h2 { font-size: 60px; }
+}
+@media (max-width: 440px) {
+  .bold .team-portraits { height: 410px; }
+  .bold .portrait-one { height: 240px; }
+  .bold .portrait-two { top: 80px; height: 220px; }
+  .bold .portrait-three { height: 215px; }
+  .bold .team-portrait figcaption { padding: 10px 7px; font-size: 7px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bold [data-float], .bold .bold-entering, .bold .bold-entering * { animation: none !important; }
+  .bold .motion-toggle { display: none; }
+}
