@@ -22,6 +22,7 @@ const Home = () => {
 			className='home'
 			style={{height: innerWidth > 767 ? height : null}}
 		>
+			<h1 className='sr-only'>Brian MacPherson — Software Engineer in Hong Kong</h1>
 			<div className='home-content'>
 				<MediaQuery maxWidth={767}>
 					<div className='home-gif'>

@@ -8,19 +8,21 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^13.1.8",
     "firebase": "^8.5.0",
-    "sass": "1.106.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-player": "^2.9.0",
     "react-responsive": "^8.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3"
+    "react-scripts": "4.0.3",
+    "sass": "1.106.0"
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test --watchAll",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postbuild": "node scripts/prerender.js",
+    "test:hosting": "node scripts/verify-hosting.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "playwright": "1.65.1"
   }
 }

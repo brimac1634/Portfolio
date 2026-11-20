@@ -1,0 +1,86 @@
+[
+  {
+    "path": "/",
+    "title": "Brian MacPherson | Software Engineer in Hong Kong",
+    "description": "Portfolio of Brian MacPherson, a Hong Kong based software engineer. Explore web and mobile projects, technical experience, and contact details.",
+    "kind": "home",
+    "sitemap": true
+  },
+  {
+    "path": "/projects",
+    "title": "Projects | Brian MacPherson",
+    "description": "Explore web and mobile projects by Brian MacPherson, including artist websites, business websites, mobile apps, and NetRoadshow tools.",
+    "kind": "projects",
+    "sitemap": true
+  },
+  {
+    "path": "/about",
+    "title": "About Brian MacPherson | Software Engineer",
+    "description": "Meet Brian MacPherson, a Hong Kong based software engineer and co-founder of NobleWills. Learn about his interests and get in touch.",
+    "kind": "about",
+    "sitemap": true
+  },
+  {
+    "path": "/projects/JoeNBrownArt",
+    "title": "Joe N. Brown Art | Brian MacPherson",
+    "description": "Gallery website for a Hong Kong artist, showcasing illustrations, paintings, characters, and concept art.",
+    "kind": "project",
+    "work": "JoeNBrownArt",
+    "sitemap": true
+  },
+  {
+    "path": "/projects/BreatheCalm",
+    "title": "Breathe Calm | Brian MacPherson",
+    "description": "An iOS and Android breathing guide built with Flutter, featuring adjustable breathing durations, calming particles, and optional vibration.",
+    "kind": "project",
+    "work": "BreatheCalm",
+    "sitemap": true
+  },
+  {
+    "path": "/projects/SpentAll",
+    "title": "SpentAll Expense Tracker | Brian MacPherson",
+    "description": "An expense tracking web app with spending categories, analytical tools, and foreign currency conversion, built by Brian MacPherson.",
+    "kind": "project",
+    "work": "SpentAll",
+    "sitemap": true
+  },
+  {
+    "path": "/projects/TooFarEastBarber",
+    "title": "Too Far East Barber & Co. | Brian MacPherson",
+    "description": "A website for a Hong Kong barber shop, providing business information, updates, and an avenue for bookings.",
+    "kind": "project",
+    "work": "TooFarEastBarber",
+    "sitemap": true
+  },
+  {
+    "path": "/projects/NetRoadshowTeleprompter",
+    "title": "NetRoadshow Teleprompter | Brian MacPherson",
+    "description": "An iPad and iPhone teleprompter app with customizable scripts and remote playback controls for NetRoadshow film crews.",
+    "kind": "project",
+    "work": "NetRoadshowTeleprompter",
+    "sitemap": true
+  },
+  {
+    "path": "/projects/NetRoadshowMiniprogram",
+    "title": "NetRoadshow Miniprogram | Brian MacPherson",
+    "description": "A WeChat miniprogram providing contact and interactive features for NetRoadshow clients in mainland China.",
+    "kind": "project",
+    "work": "NetRoadshowMiniprogram",
+    "sitemap": true
+  },
+  {
+    "path": "/projects/BonVivantCollection",
+    "title": "Bon Vivant Collection | Brian MacPherson",
+    "description": "A website project for a Hong Kong menswear and tailor shop, presenting its designs, custom fittings, and product catalogue.",
+    "kind": "project",
+    "work": "BonVivantCollection",
+    "sitemap": false
+  },
+  {
+    "path": "/projects/BreatheCalm/privacy-policy",
+    "title": "Breathe Calm Privacy Policy | Brian MacPherson",
+    "description": "Read the privacy policy for the Breathe Calm mobile app, including information collection, third-party services, and contact details.",
+    "kind": "privacy",
+    "sitemap": true
+  }
+]

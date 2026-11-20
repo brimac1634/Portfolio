@@ -14,4 +14,7 @@ ReactDOM.render(
 	</BrowserRouter>
 , document.getElementById('root'));
 
-serviceWorker.register()
+if (!window.__PRERENDER__) {
+  document.documentElement.removeAttribute('data-snapshot');
+  serviceWorker.unregister();
+}

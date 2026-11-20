@@ -6,6 +6,7 @@ Use Node 22 (verified with 22.13.1) and Yarn Classic 1.x:
 
 ```sh
 yarn install --frozen-lockfile
+yarn playwright install chromium
 yarn build
 ```
 
@@ -101,3 +102,49 @@ For future projects, use a separate `public/previews/<project>/` folder with rel
 Build with `yarn build` using the local setup above. Verify using `firebase emulators:start --only hosting`: check the preview URL both with and without the final slash, concept links, assets, mobile navigation, demo dialogs and the `X-Robots-Tag` response header. Also check `/`, `/projects` and `/about`.
 
 Publishing requires a separate, explicitly authorized Firebase Hosting deployment. Copying or building alone does not publish changes.
+
+## Crawlable pages and hosting checks
+
+`yarn build` compiles CRA and then runs `scripts/prerender.js` with Playwright Chromium.
+The post-build step serves the bundle on a temporary loopback port, renders every route
+in `src/routes.json`, and writes route-specific HTML, `404.html`, and `sitemap.xml`.
+Install Chromium with `yarn playwright install chromium` on each development/CI machine.
+Browser execution and a local listening port must be allowed in the build environment.
+No production runtime dependency is added.
+
+The registry owns metadata, exact case-sensitive routes, and sitemap membership.
+When adding a project, update its detail data and registry; add a listing card only if
+it should be listed. Bon Vivant remains accessible but excluded from the sitemap.
+Snapshots use the mobile content tree, with entrance animations made visible without
+JavaScript. React replaces that tree on startup and restores the responsive layout.
+Remote videos and analytics are excluded during prerendering; videos load normally
+in the interactive application. Build failures include missing content, broken local
+images, invalid internal links, incorrect canonicals, and browser errors.
+
+Firebase serves clean URLs from generated files, with explicit trailing-slash redirects
+for known portfolio pages and a real 404 for unknown paths. Preview directory behavior
+and indexing headers remain separate. There is no SPA catch-all rewrite.
+
+Offline app-shell caching is retired. The client unregisters the old portfolio service
+worker, and `public/service-worker.js` replaces existing workers with a one-time
+retirement worker. Keep that URL available so older installations can update.
+Normal browser/Hosting asset caching remains enabled.
+
+Verify locally (no deployment):
+
+```sh
+CI=true yarn test --watchAll=false --runInBand
+yarn build
+firebase emulators:exec --only hosting 'yarn test:hosting'
+```
+
+`test:hosting` checks every route at mobile and desktop sizes with JavaScript on/off,
+metadata, 404 responses, redirects, navigation/history, sitemap membership, and preview
+files/headers. Screenshots are saved under `/private/tmp/portfolio-*.png`.
+Use `HOSTING_URL` to override the default `http://127.0.0.1:5000` emulator URL.
+
+On case-insensitive macOS filesystems, the Hosting emulator may serve a mixed-case
+HTML file for a differently cased request. Client routing rejects incorrect casing;
+verify HTTP casing behavior in a case-sensitive environment before deployment.
+If the emulator selects another port, pass it with `HOSTING_URL` (for example,
+`firebase emulators:exec --only hosting 'HOSTING_URL=http://127.0.0.1:5002 yarn test:hosting'`).

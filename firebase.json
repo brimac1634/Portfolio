@@ -6,12 +6,6 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ],
     "headers": [
       {
         "source": "/previews/**",
@@ -21,6 +15,73 @@
             "value": "noindex, nofollow"
           }
         ]
+      },
+      {
+        "source": "/service-worker.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      }
+    ],
+    "cleanUrls": true,
+    "redirects": [
+      {
+        "regex": "^/previews/sjrec2rec$",
+        "destination": "/previews/sjrec2rec/",
+        "type": 301
+      },
+      {
+        "source": "/projects/",
+        "destination": "/projects",
+        "type": 301
+      },
+      {
+        "source": "/about/",
+        "destination": "/about",
+        "type": 301
+      },
+      {
+        "source": "/projects/JoeNBrownArt/",
+        "destination": "/projects/JoeNBrownArt",
+        "type": 301
+      },
+      {
+        "source": "/projects/BreatheCalm/",
+        "destination": "/projects/BreatheCalm",
+        "type": 301
+      },
+      {
+        "source": "/projects/SpentAll/",
+        "destination": "/projects/SpentAll",
+        "type": 301
+      },
+      {
+        "source": "/projects/TooFarEastBarber/",
+        "destination": "/projects/TooFarEastBarber",
+        "type": 301
+      },
+      {
+        "source": "/projects/NetRoadshowTeleprompter/",
+        "destination": "/projects/NetRoadshowTeleprompter",
+        "type": 301
+      },
+      {
+        "source": "/projects/NetRoadshowMiniprogram/",
+        "destination": "/projects/NetRoadshowMiniprogram",
+        "type": 301
+      },
+      {
+        "source": "/projects/BonVivantCollection/",
+        "destination": "/projects/BonVivantCollection",
+        "type": 301
+      },
+      {
+        "source": "/projects/BreatheCalm/privacy-policy/",
+        "destination": "/projects/BreatheCalm/privacy-policy",
+        "type": 301
       }
     ]
   }

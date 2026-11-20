@@ -3,18 +3,21 @@ import { Link } from 'react-router-dom';
 
 import workDetailData from './work-detail.data';
 
+import NotFound from '../not-found/not-found.component';
+import { isPrerendering } from '../../prerender';
 import Video from '../../components/video/video.component';
 
 import './work-detail.styles.scss';
 
 const WorkDetail = ({ match, location }) => {
 	const work = workDetailData[match.params.work];
+	if (!work) return <NotFound />;
 
 	return (
 		<div className='work-detail'>
 			<h1>{work.title}</h1>
 			{
-				work.video &&
+				work.video && !isPrerendering &&
 				<div className='video-container'>
 					<Video url={work.video} />
 				</div>
@@ -27,7 +30,7 @@ const WorkDetail = ({ match, location }) => {
 						<div className='detail-item'>
 							<span>Link</span>
 							<a 
-								href={`https://www.${work.link}`} 
+								href={work.link}
 								target='_blank' 
 								rel='noopener noreferrer'
 							>{work.link}</a>

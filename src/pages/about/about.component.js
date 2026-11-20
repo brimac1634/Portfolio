@@ -8,11 +8,11 @@ import './about.styles.scss';
 const About = () => (
 	<div className='about'>
 		<div className='content'>
-			<p className='intro'>
+			<h1 className='intro'>
 				Hi, I'm Brian MacPherson.
 				<br />A fullstack developer
 				<br />based in Hong Kong
-			</p>
+			</h1>
 			<p className='details'>
 				I have an obsession for learning, problem solving, automating, and building great projects. When I'm not working on a project, I'm digging into the latest technologies, so that I can make the best decisions for future projects.
 			</p>

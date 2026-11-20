@@ -1,3 +1,4 @@
+import { isPrerendering } from '../prerender';
 import firebase from 'firebase/app';
 import 'firebase/storage';
 import 'firebase/analytics';
@@ -18,6 +19,6 @@ export const getVideoURL = async videoName => {
 }
 
 firebase.initializeApp(firebaseConfig);
-firebase.analytics()
+if (!isPrerendering && process.env.NODE_ENV !== 'test') firebase.analytics();
 
 export const storageRef = firebase.storage().ref();

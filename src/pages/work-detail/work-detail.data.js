@@ -2,7 +2,7 @@ const WORK_DETAILS = {
 	JoeNBrownArt: {
 		title: 'Joe N. Brown Art',
 		description: 'Gallery website built for a Hong Kong based artist, showcasing illustrations, paintings, characters, and concepts art.',
-		link: 'joenbrownart.com',
+		link: 'https://www.joenbrownart.com',
 		video: 'joenbrownart-demo.mp4',
 		info: [
 			['Development', 'Brian MacPherson'],
@@ -27,7 +27,7 @@ const WORK_DETAILS = {
 	SpentAll: {
 		title: 'SpentAll Expense Tracker',
 		description: 'SpentAll is a simple-to-use spending tracker allowing users to log expenditures, categorize them, and track their habits using the analytical tools. Besides other customizations available, users can log their expenses in foreign currencies while traveling, while the app gets the latest conversion rate to log the expense in the user\'s home currency. This project was a personal project of mine, built for my own needs, but for the use of anyone.',
-		// link: 'SpentAll.com',
+		// link: 'https://www.SpentAll.com',
 		video: 'SpentAll-demo.mp4',
 		info: [
 			['Development', 'Brian MacPherson'],
@@ -39,7 +39,7 @@ const WORK_DETAILS = {
 	TooFarEastBarber: {
 		title: 'Too Far East Barber & Co.',
 		description: 'Too Far East Barber & Co. is a Hong Kong based barber shop. This project was to serve as their general website, providing details, updates, and an avenue to making bookings.',
-		link: 'TooFarEastBarber.com',
+		link: 'https://www.TooFarEastBarber.com',
 		video: 'TFE-demo.mp4',
 		info: [
 			['Client', 'Too Far East Barber & Co.'],

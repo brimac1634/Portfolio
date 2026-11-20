@@ -1,22 +1,18 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
 
 import workData from './work.data';
 
 import FloatersContainer from '../../components/floaters-container/floaters-container.component';
 import WorkItem from '../../components/work-item/work-item.component';
-import WorkDetail from '../work-detail/work-detail.component';
-import PrivacyPolicy from '../privacy-policy/privacy-policy.component';
 
 import './work.styles.scss';
 
-const Work = ({ match, history }) => (
+const Work = () => (
 	<div className='work'>
-		<Switch>
-			<Route exact path={match.path} render={()=>(
+
 				<div>
 					<div className='work-header'>
-						<span>A handful of personal projects...</span>
+						<h1>A handful of personal projects...</h1>
 					</div>
 					<div className='work-collection'>
 						{
@@ -24,7 +20,7 @@ const Work = ({ match, history }) => (
 							workData.map(({ route, gridArea, image, title, description}, i) => (
 								<WorkItem 
 									key={title}
-									onClick={()=>history.push(`${match.path}${route}`)}
+									to={`/projects${route}`}
 									style={{
 										gridArea,
 										animationDelay: `${(i + 1) * 0.2}s`
@@ -39,11 +35,6 @@ const Work = ({ match, history }) => (
 						<FloatersContainer otherClasses='holder2' show />
 					</div>
 				</div>
-			)}/>
-			<Route path={`${match.path}/:work/privacy-policy`} component={PrivacyPolicy}/>
-			<Route path={`${match.path}/:work`} component={WorkDetail}/>
-			<Redirect to={match.path} />
-		</Switch>
 	</div>
 )
 

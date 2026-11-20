@@ -13,11 +13,18 @@ import Home from './pages/home/home.component';
 import Work from './pages/work/work.component';
 import About from './pages/about/about.component';
 
+import routes from './routes.json';
+import Metadata from './components/metadata/metadata.component';
+import NotFound from './pages/not-found/not-found.component';
+import WorkDetail from './pages/work-detail/work-detail.component';
+import PrivacyPolicy from './pages/privacy-policy/privacy-policy.component';
+
 import './App.scss';
 
 const App = ({ location }) => {
   return (
     <div className='App'>
+      <Metadata />
       {
         location.pathname !== '/about' &&
         <div className='side-panel' />
@@ -28,10 +35,21 @@ const App = ({ location }) => {
       <ErrorBoundary>
         <Suspense fallback={<Loader />}>
           <Switch>
-              <Route exact path='/' component={Home}/>
-              <Route path='/projects' component={Work}/>
-              <Route path='/about' component={About}/>
-              <Redirect to='/' />
+              {routes.map(route => (
+                <Route exact sensitive strict key={route.path} path={route.path} render={() => {
+                  if (route.kind === 'home') return <Home />;
+                  if (route.kind === 'projects') return <Work />;
+                  if (route.kind === 'about') return <About />;
+                  if (route.kind === 'privacy') return <PrivacyPolicy match={{ params: { work: 'BreatheCalm' } }} />;
+                  return <WorkDetail match={{ params: { work: route.work } }} location={location} />;
+                }} />
+              ))}
+              <Route render={() => {
+                const normalized = location.pathname.replace(/\/+$/, '') || '/';
+                return normalized !== location.pathname && routes.some(route => route.path === normalized)
+                  ? <Redirect to={{ ...location, pathname: normalized }} />
+                  : <NotFound />;
+              }} />
           </Switch>
         </Suspense>
       </ErrorBoundary>
