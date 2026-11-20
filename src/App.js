@@ -14,6 +14,7 @@ import Work from './pages/work/work.component';
 import About from './pages/about/about.component';
 
 import routes from './routes.json';
+import { version } from '../package.json';
 import Metadata from './components/metadata/metadata.component';
 import NotFound from './pages/not-found/not-found.component';
 import WorkDetail from './pages/work-detail/work-detail.component';
@@ -81,6 +82,7 @@ const App = ({ location }) => {
         </MediaQuery>
       }
       <Header />
+      <span className='site-version'>v{version}</span>
     </div>
   );
 }
