@@ -1,4 +1,11 @@
 const WORK_DATA = [
+  {
+    title: 'NobleWills',
+    description: 'International estate-planning platform',
+    image: 'noblewills-homepage.jpg',
+    gridArea: 'noblewills',
+    route: '/NobleWills'
+  },
 	{
 		title: 'Joe N. Brown Art',
 		description: 'Website',

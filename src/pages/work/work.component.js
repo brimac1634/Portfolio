@@ -12,7 +12,7 @@ const Work = () => (
 
 				<div>
 					<div className='work-header'>
-						<h1>A handful of personal projects...</h1>
+						<h1>Selected projects</h1>
 					</div>
 					<div className='work-collection'>
 						{

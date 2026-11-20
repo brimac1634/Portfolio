@@ -21,6 +21,14 @@
     "sitemap": true
   },
   {
+    "path": "/projects/NobleWills",
+    "title": "NobleWills | International Estate Planning | Brian MacPherson",
+    "description": "NobleWills supports online will writing and cross-border estate planning. Explore the platform and Brian MacPherson\u2019s role as co-founder and CTO.",
+    "kind": "project",
+    "work": "NobleWills",
+    "sitemap": true
+  },
+  {
     "path": "/projects/JoeNBrownArt",
     "title": "Joe N. Brown Art | Brian MacPherson",
     "description": "Gallery website for a Hong Kong artist, showcasing illustrations, paintings, characters, and concept art.",

@@ -1,4 +1,33 @@
+import React from 'react';
+import nobleWillsScreenshot from '../../assets/noblewills-homepage.jpg';
+
 const WORK_DETAILS = {
+  NobleWills: {
+    title: 'NobleWills',
+    screenshot: {
+      src: nobleWillsScreenshot,
+      width: 1440,
+      height: 900,
+      alt: 'NobleWills homepage introducing online and personalised Will writing for Hong Kong and assets worldwide'
+    },
+    richDescription: (
+      <>
+        <p>
+          <a href='https://noblewills.com/' target='_blank' rel='noopener noreferrer'>NobleWills</a> is a will-writing and estate-planning platform for individuals, couples and families with assets or loved ones across countries. Based in Hong Kong, it combines online tools with human guidance to help people plan across multiple jurisdictions.
+        </p>
+        <p>
+          Its <a href='https://noblewills.com/services/online-wills/' target='_blank' rel='noopener noreferrer'>online will-writing service</a> guides users through recording their wishes, choosing executors and guardians, and organising their assets. For more complex or cross-border circumstances, its <a href='https://noblewills.com/services/premium-wills/' target='_blank' rel='noopener noreferrer'>Premium Will service</a> offers personalised planning and drafting. Available services depend on the jurisdictions involved.
+        </p>
+        <p>
+          As co-founder and CTO of NobleWills, I focus my engineering work on the platform behind these services, making complex estate-planning workflows clearer and easier to use, with privacy, reliability and maintainability central to the product.
+        </p>
+      </>
+    ),
+    info: [
+      ['Role', 'Co-founder & CTO'],
+      ['Project type', 'Estate-planning platform']
+    ]
+  },
 	JoeNBrownArt: {
 		title: 'Joe N. Brown Art',
 		description: 'Gallery website built for a Hong Kong based artist, showcasing illustrations, paintings, characters, and concepts art.',

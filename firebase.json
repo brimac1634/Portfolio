@@ -44,6 +44,11 @@
         "type": 301
       },
       {
+        "source": "/projects/NobleWills/",
+        "destination": "/projects/NobleWills",
+        "type": 301
+      },
+      {
         "source": "/projects/JoeNBrownArt/",
         "destination": "/projects/JoeNBrownArt",
         "type": 301

@@ -51,6 +51,6 @@ test('normalizes known trailing slash paths and preserves search and hash', () =
 test('registry metadata is unique and includes only listed routes in sitemap', () => {
   expect(new Set(routes.map(route => route.title)).size).toBe(routes.length);
   expect(new Set(routes.map(route => route.description)).size).toBe(routes.length);
-  expect(routes.filter(route => route.sitemap)).toHaveLength(10);
+  expect(routes.filter(route => route.sitemap)).toHaveLength(11);
   expect(routes.find(route => route.work === 'BonVivantCollection').sitemap).toBe(false);
 });

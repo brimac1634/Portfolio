@@ -1,4 +1,26 @@
 .work-detail {
+  width: 65%;
+  max-width: 1100px;
+  margin: 5% auto;
+
+  @media screen and (max-width: 991px) {
+    width: 88%;
+    margin: 150px auto 0;
+  }
+
+  .project-screenshot {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .description a {
+    font-size: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
 	text-align: center;
 	animation: fade-in 600ms ease-in-out;
 

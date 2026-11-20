@@ -22,8 +22,11 @@ const WorkDetail = ({ match, location }) => {
 					<Video url={work.video} />
 				</div>
 			}
+      {work.screenshot && (
+        <img className='project-screenshot' {...work.screenshot} alt={work.screenshot.alt} />
+      )}
 			<div className='info'>
-				<p>{work.description}</p>
+				{work.richDescription ? <div className='description'>{work.richDescription}</div> : <p>{work.description}</p>}
 				<div className='details'>
 					{
 						work.link &&
