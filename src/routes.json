@@ -16,7 +16,7 @@
   {
     "path": "/about",
     "title": "About Brian MacPherson | Software Engineer",
-    "description": "Meet Brian MacPherson, a Hong Kong based software engineer and co-founder of NobleWills. Learn about his interests and get in touch.",
+    "description": "Meet Brian MacPherson, a Hong Kong based software engineer and co-founder and CTO of NobleWills, working across products, systems, and cloud infrastructure.",
     "kind": "about",
     "sitemap": true
   },
@@ -83,14 +83,6 @@
     "kind": "project",
     "work": "NetRoadshowMiniprogram",
     "sitemap": true
-  },
-  {
-    "path": "/projects/BonVivantCollection",
-    "title": "Bon Vivant Collection | Brian MacPherson",
-    "description": "A website project for a Hong Kong menswear and tailor shop, presenting its designs, custom fittings, and product catalogue.",
-    "kind": "project",
-    "work": "BonVivantCollection",
-    "sitemap": false
   },
   {
     "path": "/projects/BreatheCalm/privacy-policy",

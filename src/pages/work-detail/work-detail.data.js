@@ -106,18 +106,6 @@ const WORK_DETAILS = {
 			['Back End', 'Firebase']
 		]
 	},
-	BonVivantCollection: {
-		title: 'Bon Vivant Collection',
-		description: 'Bon Vivant Collection is a men\'s clothing design and tailor shop based in Hong Kong. This project was to serve as their main information and retail website, showcasing their timeless designs and brand culture, while also outlining the process of custom fittings, and online product catalogue.',
-		info: [
-			['Link', 'New Site Coming Soon!'],
-			['Client', 'Bon Vivant Collection'],
-			['Development', 'Brian MacPherson'],
-			['Design', 'Ashley Leung'],
-			['Front End', 'React (Javascript)'],
-			['Back End', 'Node + PostgreSQL + AWS']
-		]
-	},
 	NetRoadshowTeleprompter: {
 		title: 'NetRoadshow Teleprompter',
 		description: 'This Teleprompter is an iPad + iPhone combination app that was to serve the film crews at NetRoadshow with a more customizable teleprompter solution. An iPad, while being mounted to a camera can display a script with a number of different customization options, while another iPad or iPhone can act as a remote control for the speaker. This allows the speaker to directly control the speed, pausing, and starting of the script from a podium.',

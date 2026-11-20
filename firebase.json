@@ -84,11 +84,6 @@
         "type": 301
       },
       {
-        "source": "/projects/BonVivantCollection/",
-        "destination": "/projects/BonVivantCollection",
-        "type": 301
-      },
-      {
         "source": "/projects/BreatheCalm/privacy-policy/",
         "destination": "/projects/BreatheCalm/privacy-policy",
         "type": 301

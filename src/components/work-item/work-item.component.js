@@ -6,10 +6,11 @@ import FloatersContainer from '../../components/floaters-container/floaters-cont
 
 import './work-item.styles.scss';
 
-const WorkItem = ({ image, title, description, ...otherProps }) => {
+const WorkItem = ({ image, title, description, history, ...otherProps }) => {
 	const [loadComplete, setLoadComplete] = useState(false);
 	return (
 		<Link className={`work-item ${loadComplete ? 'loaded' : 'loading'}`}  { ...otherProps }>
+			{history && <span className='project-year'>{history.year}{history.ongoing ? ' · Ongoing' : ''}</span>}
 			<FloatersContainer show={!loadComplete} otherClasses='floater-load' />
 			<img 
 				className={`image ${loadComplete ? 'show' : null}`}

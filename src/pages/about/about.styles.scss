@@ -1,115 +1,101 @@
 .about {
-	width: 65%;
-	margin: 2% auto;
-	animation: fade-in 600ms ease-in-out;
-	position: relative;
+  width: 65%;
+  max-width: 1200px;
+  margin: 5% auto 80px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  column-gap: 40px;
+  animation: about-enter 400ms ease-out;
 
-	@media screen and (max-width: 991px) {
-		width: 70%;
-		margin: 150px auto 0 auto;
-	}
+  .about-eyebrow {
+    color: #c5b39f;
+    font-size: 12px;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    margin: 0 0 22px;
+  }
 
-	@media screen and (max-width: 767px) {
-		width: 88%;
-	}
+  .intro {
+    font-size: clamp(32px, 3.4vw, 52px);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    margin: 0 0 28px;
+  }
 
-	.content {
-		.details {
-			width: 50%;
-			line-height: 30px;
-			font-size: 110%;
+  .details {
+    font-size: 16px;
+    line-height: 1.85;
+    letter-spacing: 0.4px;
+    color: #dddbe4;
+    margin: 0 0 20px;
+  }
 
-			@media screen and (max-width: 767px) {
-				width: 100%;
-			}
-		}
+  a {
+    font-size: inherit;
+    color: #d1af88;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    &:hover { color: white; }
+    &:focus-visible { outline: 2px solid #d1af88; outline-offset: 5px; }
+  }
 
-		.intro {
-			font-size: 300%;
-			line-height: 52px;
-			margin-top: 0;
-			font-weight: 700;
+  .about-system {
+    align-self: center;
+    svg { display: block; width: 100%; height: auto; }
+  }
 
-			@media screen and (max-width: 991px) {
-				line-height: 48px;
-				font-size: 250%;
-			}
+  .system-layer {
+    fill: rgba(255, 255, 255, 0.025);
+    stroke: #777087;
+    stroke-width: 1.3;
+    text { fill: #e5e0eb; stroke: none; font-size: 18px; letter-spacing: 1px; }
+  }
+  .system-connection { fill: none; stroke: #777087; stroke-width: 1.3; }
+  .system-junction { fill: #a27d57; }
+  .system-signal { fill: #e3bc8d; opacity: 0; animation: system-travel 10s ease-in-out 400ms infinite; }
 
-			@media screen and (max-width: 575px) {
-				line-height: 34px;
-				font-size: 170%;
-			}
-		}
+  .about-contact { grid-column: 1 / -1; max-width: 660px; margin-top: 24px; }
+  .interest { font-size: 21px; line-height: 1.6; letter-spacing: 0.3px; margin: 0 0 24px; }
+  .contact-row {
+    display: flex;
+    gap: 20px;
+    font-size: 15px;
+    line-height: 1.8;
+    letter-spacing: 0.3px;
+    margin-bottom: 8px;
+    span { width: 48px; flex-shrink: 0; color: #b8b2c4; }
+    a { overflow-wrap: anywhere; }
+  }
 
-		.interest {
-			font-size: 160%;
-			margin-bottom: 40px;
-			font-weight: 600;
+  @media (max-width: 991px) {
+    width: 70%;
+    margin-top: 160px;
+    grid-template-columns: minmax(0, 1fr);
+    .about-system { width: 280px; max-width: 100%; justify-self: center; margin: 12px 0; }
+    .about-contact { margin-top: 12px; }
+  }
+  @media (max-width: 767px) {
+    width: 88%;
+    .intro { font-size: 36px; }
+    .about-eyebrow { max-width: 290px; }
+  }
+}
 
-			@media screen and (max-width: 991px) {
-				font-size: 140%;
-			}
-
-			@media screen and (max-width: 575px) {
-				font-size: 140%;
-			}
-
-			.gold {
-				color: var(--color4);
-			}
-		}
-
-		.contact {
-			display: flex;
-			flex-direction: column;
-			font-size: 110%;
-
-			.row {
-				display: flex;
-				margin-bottom: 8px;
-
-				> * {
-					display: block;
-				}
-
-				:first-child {
-					margin-right: 16px;
-					color: var(--color4);
-				}
-
-				a {
-					font-size: unset;
-				}
-			}
-		}
-
-		.gif {
-			width: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin: 20px 0;
-
-			&:after {
-				content: "";
-				display: block;
-				padding-bottom: 56.25%;
-			}
-			
-			.monitor-gif {
-				width: 80%;
-				height: 45%;
-				position: static;
-				transform: none;
-			}
-		}
-	}	
-
-	.monitor-gif {
-		position: absolute;
-		right: 0;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 40%;
-	}
+@keyframes about-enter { from { opacity: 0; } to { opacity: 1; } }
+@keyframes system-travel {
+  0% { transform: translateY(0); opacity: 0; }
+  3% { opacity: 1; }
+  10.5% { transform: translateY(74px); opacity: 1; }
+  12%, 16.5% { opacity: 0; }
+  16.8% { transform: translateY(148px); opacity: 0; }
+  19.5% { opacity: 1; }
+  28.5% { transform: translateY(222px); opacity: 1; }
+  30%, 100% { transform: translateY(222px); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about, .about *, .about *::before, .about *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }

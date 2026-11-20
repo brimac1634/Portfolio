@@ -114,7 +114,7 @@ No production runtime dependency is added.
 
 The registry owns metadata, exact case-sensitive routes, and sitemap membership.
 When adding a project, update its detail data and registry; add a listing card only if
-it should be listed. Bon Vivant remains accessible but excluded from the sitemap.
+it should be listed. Removed projects should be deleted from the registry and hosting redirects.
 Snapshots use the mobile content tree, with entrance animations made visible without
 JavaScript. React replaces that tree on startup and restores the responsive layout.
 Remote videos and analytics are excluded during prerendering; videos load normally

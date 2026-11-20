@@ -23,7 +23,7 @@ test.each(routes)('$path has one heading and unique route metadata', route => {
   expect(document.querySelector('meta[name="description"]').content).toBe(route.description);
 });
 
-test.each(['/missing', '/about/extra', '/projects/unknown', '/projects/BreatheCalm/extra', '/projects/SpentAll/privacy-policy', '/projects/breathecalm'])('%s shows a noindex 404', path => {
+test.each(['/projects/BonVivantCollection', '/projects/BonVivantCollection/', '/missing', '/about/extra', '/projects/unknown', '/projects/BreatheCalm/extra', '/projects/SpentAll/privacy-policy', '/projects/breathecalm'])('%s shows a noindex 404', path => {
   visit(path);
   expect(screen.getByRole('heading', { name: 'Page not found' })).toBeInTheDocument();
   expect(document.querySelector('link[rel="canonical"]')).toBeNull();
@@ -52,5 +52,5 @@ test('registry metadata is unique and includes only listed routes in sitemap', (
   expect(new Set(routes.map(route => route.title)).size).toBe(routes.length);
   expect(new Set(routes.map(route => route.description)).size).toBe(routes.length);
   expect(routes.filter(route => route.sitemap)).toHaveLength(12);
-  expect(routes.find(route => route.work === 'BonVivantCollection').sitemap).toBe(false);
+  expect(routes.find(route => route.work === 'BonVivantCollection')).toBeUndefined();
 });

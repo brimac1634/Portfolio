@@ -1,6 +1,7 @@
 import React from 'react';
 
 import workData from './work.data';
+import projectHistory from './project-history';
 
 import FloatersContainer from '../../components/floaters-container/floaters-container.component';
 import WorkItem from '../../components/work-item/work-item.component';
@@ -28,6 +29,7 @@ const Work = () => (
 									image={image} 
 									title={title} 
 									description={description}
+                  history={projectHistory[route.slice(1)]}
 								/>
 							))
 						}
