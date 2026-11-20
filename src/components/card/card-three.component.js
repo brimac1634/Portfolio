@@ -1,31 +1,24 @@
 import React from 'react';
 
-import { ReactComponent as SkillsLogo } from '../../assets/skills.svg'
-
 import './card.styles.scss';
 
 const CardThree = () => (
-	<div className='card'>
-		<div className='logo'>
-			<SkillsLogo />
-		</div>
-		<div className='text-container'>
-			<div className='text'>
-				<h3>...with <span className='gold'>EXPERIENCE</span> in...</h3>
-				<div className='dual-grid'>
-					<span>Typescript/Javascript</span>
-					<span>C#/.Net</span>
-					<span>Python</span>
-					<span>React/Next/Gatsby</span>
-					<span>Docker/Kubernetes</span>
-					<span>Git/CI-CD</span>
-					<span>HTML/CSS</span>
-					<span>SQL/NoSQL</span>
-					<span>Flutter/Dart</span>
-					<span>Swift/iOS</span>
-				</div>
-			</div>
-		</div>
-	</div>
-)
+  <div className='card'>
+    <p className='card-label'>Capabilities</p>
+    <div className='text-container'>
+      <div className='text'>
+        <h2>Toolkit highlights</h2>
+        <dl>
+          <div><dt>Languages</dt><dd>TypeScript · Python · C# · Rust</dd></div>
+          <div><dt>Services</dt><dd>Node.js · NestJS · FastAPI · .NET</dd></div>
+          <div><dt>Cloud &amp; infrastructure</dt><dd>AWS · GCP · Terraform · Kubernetes</dd></div>
+          <div><dt>Data &amp; messaging</dt><dd>PostgreSQL · MongoDB · Redis · BigQuery · Pub/Sub</dd></div>
+          <div><dt>AI &amp; integration</dt><dd>MCP · Semantic search · RAG</dd></div>
+          <div><dt>Interfaces</dt><dd>React · Next.js · Flutter</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+);
+
 export default CardThree;

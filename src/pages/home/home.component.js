@@ -22,7 +22,7 @@ const Home = () => {
 			className='home'
 			style={{height: innerWidth > 767 ? height : null}}
 		>
-			<h1 className='sr-only'>Brian MacPherson — Software Engineer in Hong Kong</h1>
+			<h1 className='sr-only'>Brian MacPherson | Software Engineer — Systems Architecture and Infrastructure</h1>
 			<div className='home-content'>
 				<MediaQuery maxWidth={767}>
 					<div className='home-gif'>
@@ -32,7 +32,7 @@ const Home = () => {
 								`${portfolio_500} 500w,
 								${portfolio_800} 800w`
 							} 
-							alt='fullstack developer'
+							alt='Animated portfolio illustration'
 						/>
 					</div>
 					<CarouselItemList>

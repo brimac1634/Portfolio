@@ -1,27 +1,22 @@
 import React from 'react';
 
-import { ReactComponent as PrioritiesLogo } from '../../assets/priorities.svg'
-
 import './card.styles.scss';
 
 const CardTwo = () => (
-	<div className='card'>
-		<div className='logo'>
-			<PrioritiesLogo />
-		</div>
-		<div className='text-container'>
-			<div className='text'>
-				<h3>...who <span className='gold'>PRIORITIZES</span>...</h3>
-				<div className='dual-grid spread'>
-					<span>Fast Performance</span>
-					<span>Clean Code</span>
-					<span>Software Design</span>
-					<span>Maintainability</span>
-					<span>Scalability</span>
-					<span>Reusability</span>
-				</div>
-			</div>
-		</div>
-	</div>
-)
+  <div className='card'>
+    <p className='card-label'>Experience</p>
+    <div className='text-container'>
+      <div className='text'>
+        <h2>Engineering in practice</h2>
+        <dl>
+          <div><dt>Systems &amp; services</dt><dd>APIs, microservices, and real-time communication.</dd></div>
+          <div><dt>Cloud &amp; infrastructure</dt><dd>Infrastructure as code, containers, and automated delivery.</dd></div>
+          <div><dt>Data &amp; AI</dt><dd>Data pipelines, analytics, semantic search, and AI integrations.</dd></div>
+          <div><dt>Production quality</dt><dd>Automated testing, load testing, and maintainable systems.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+);
+
 export default CardTwo;

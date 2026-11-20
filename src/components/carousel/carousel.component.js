@@ -57,7 +57,7 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 					`${portfolio_500} 500w,
 					${portfolio_800} 800w`
 				} 
-				alt='fullstack developer' 
+				alt='Animated portfolio illustration'
 				className='port'
 			/>
 			<div className='message' style={{opacity}}>

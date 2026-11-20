@@ -22,10 +22,7 @@ const CarouselItem = ({ isVisible, children }) => {
 		>
 			<FloatersContainer show otherClasses='background-canvas' />
 			<div className={`inner-item ${isShowing ? 'show' : 'hide'}`}>
-				{
-					isShowing &&
-					children
-				}
+				{ children }
 			</div>
 		</div>
 	)
