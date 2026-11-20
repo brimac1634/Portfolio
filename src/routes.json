@@ -29,6 +29,14 @@
     "sitemap": true
   },
   {
+    "path": "/projects/NobleWillsKnowledge",
+    "title": "NobleWills Knowledge | Estate Planning Guides & Search | Brian MacPherson",
+    "description": "Explore NobleWills Knowledge, an estate-planning knowledge platform with guides, FAQs, semantic search and a retrieval-augmented generation pipeline.",
+    "kind": "project",
+    "work": "NobleWillsKnowledge",
+    "sitemap": true
+  },
+  {
     "path": "/projects/JoeNBrownArt",
     "title": "Joe N. Brown Art | Brian MacPherson",
     "description": "Gallery website for a Hong Kong artist, showcasing illustrations, paintings, characters, and concept art.",

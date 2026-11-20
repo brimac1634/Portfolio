@@ -18,10 +18,12 @@
 		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: repeat(14, 1fr);
+		grid-template-rows: repeat(16, 1fr);
 		grid-template-areas: 
 			"noblewills noblewills"
 			"noblewills noblewills"
+			"knowledge knowledge"
+			"knowledge knowledge"
 			"joe joe"
 			"joe joe"
 			"breathe breathe"
@@ -40,10 +42,12 @@
 
 		@media screen and (min-width: 576px) {
 			grid-template-columns: repeat(4, 1fr);
-			grid-template-rows: repeat(8, 1fr);
+			grid-template-rows: repeat(10, 1fr);
 			grid-template-areas: 
 				"noblewills noblewills noblewills noblewills"
 				"noblewills noblewills noblewills noblewills"
+				"knowledge knowledge knowledge knowledge"
+				"knowledge knowledge knowledge knowledge"
 				"joe joe breathe breathe"
 				"joe joe breathe breathe"
 				"spent spent too too"

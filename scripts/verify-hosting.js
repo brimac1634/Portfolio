@@ -24,14 +24,14 @@ async function main() {
           assert.ok((await page.locator('#root').innerText()).length > 100);
           assert.equal(await page.locator('meta[name="description"]').getAttribute('content'), route.description);
           assert.ok(await page.locator('h1').isVisible());
-          if (route.path === '/projects/NobleWills') {
+          if (['/projects/NobleWills', '/projects/NobleWillsKnowledge'].includes(route.path)) {
             const screenshot = page.locator('.project-screenshot');
             await screenshot.evaluate(image => image.decode());
             const bounds = await screenshot.boundingBox();
             assert.ok(Math.abs(bounds.width / bounds.height - 1.6) < 0.01);
             assert.ok(bounds.width < width * 0.95, 'project image has side margins');
             assert.equal(await page.locator('.description p').count(), 3);
-            for (const href of ['https://noblewills.com/', 'https://noblewills.com/services/online-wills/', 'https://noblewills.com/services/premium-wills/']) {
+            for (const href of (route.work === 'NobleWillsKnowledge' ? ['https://knowledge.noblewills.com/', 'https://noblewills.com/', 'https://knowledge.noblewills.com/en-hk/topics/', 'https://knowledge.noblewills.com/en-hk/guides/'] : ['https://noblewills.com/', 'https://noblewills.com/services/online-wills/', 'https://noblewills.com/services/premium-wills/'])) {
               assert.equal(await page.locator(`.description a[href="${href}"]`).count(), 1);
             }
             assert.ok((await page.locator('.details').innerText()).includes('Co-founder & CTO'));
@@ -46,7 +46,7 @@ async function main() {
               assert.equal(await element.evaluate(el => getComputedStyle(el).opacity), '1');
             }
           }
-          if (['/', '/projects', '/about', '/projects/BreatheCalm', '/projects/NobleWills'].includes(route.path)) {
+          if (['/', '/projects', '/about', '/projects/BreatheCalm', '/projects/NobleWills', '/projects/NobleWillsKnowledge'].includes(route.path)) {
             await page.screenshot({ path: `/private/tmp/portfolio-${route.path.replace(/\//g, '_') || 'home'}-${width}-${javaScriptEnabled}.png`, fullPage: true, animations: 'disabled' });
           }
         }
@@ -58,6 +58,9 @@ async function main() {
         }
         if (javaScriptEnabled) {
           await page.goto(base + '/projects');
+          await page.locator('a.work-item[href="/projects/NobleWillsKnowledge"]').click();
+          await page.waitForFunction(() => document.title === 'NobleWills Knowledge | Estate Planning Guides & Search | Brian MacPherson');
+          await page.goBack();
           await page.locator('a.work-item[href="/projects/NobleWills"]').click();
           await page.waitForFunction(() => document.title === 'NobleWills | International Estate Planning | Brian MacPherson');
           await page.goBack();

@@ -31,7 +31,8 @@
 }
 
 .work-item {
-  &[href='/projects/NobleWills'] .image {
+  &[href='/projects/NobleWills'] .image,
+  &[href='/projects/NobleWillsKnowledge'] .image {
     object-fit: cover;
     object-position: top;
   }

@@ -6,6 +6,13 @@ const WORK_DATA = [
     gridArea: 'noblewills',
     route: '/NobleWills'
   },
+  {
+    title: 'NobleWills Knowledge',
+    description: 'Estate-planning knowledge and semantic search',
+    image: 'noblewills-knowledge-homepage.jpg',
+    gridArea: 'knowledge',
+    route: '/NobleWillsKnowledge'
+  },
 	{
 		title: 'Joe N. Brown Art',
 		description: 'Website',

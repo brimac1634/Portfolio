@@ -1,7 +1,35 @@
 import React from 'react';
+import knowledgeScreenshot from '../../assets/noblewills-knowledge-homepage.jpg';
 import nobleWillsScreenshot from '../../assets/noblewills-homepage.jpg';
 
 const WORK_DETAILS = {
+  NobleWillsKnowledge: {
+    title: 'NobleWills Knowledge',
+    screenshot: {
+      src: knowledgeScreenshot,
+      width: 1440,
+      height: 900,
+      alt: 'NobleWills Knowledge homepage with estate-planning search, guides and topics.'
+    },
+    richDescription: (
+      <>
+        <p>
+          <a href='https://knowledge.noblewills.com/' target='_blank' rel='noopener noreferrer'>NobleWills Knowledge</a> brings together estate-planning guides, FAQs and service information from <a href='https://noblewills.com/' target='_blank' rel='noopener noreferrer'>NobleWills</a>. It helps individuals and families understand the decisions involved in making a Will and planning for the future, with content organised by jurisdiction.
+        </p>
+        <p>
+          Readers can explore <a href='https://knowledge.noblewills.com/en-hk/topics/' target='_blank' rel='noopener noreferrer'>estate-planning topics</a> such as executors, guardianship and assets, or follow <a href='https://knowledge.noblewills.com/en-hk/guides/' target='_blank' rel='noopener noreferrer'>practical guides</a> that explain key steps in more detail. Search provides another way to find relevant information without needing to know the precise terminology.
+        </p>
+        <p>
+          As co-founder and CTO of NobleWills, I’m responsible for the site’s design, development and infrastructure. A key part of this work is the content indexing and retrieval pipeline: content is converted into embeddings and indexed in a vector database, allowing semantic search to retrieve material based on meaning. Reranking then prioritises the most relevant results, which provide context for retrieval-augmented generation (RAG), grounding generated responses in the indexed content.
+        </p>
+      </>
+    ),
+    info: [
+      ['Role', 'Co-founder & CTO'],
+      ['Project type', 'Knowledge platform']
+    ]
+  },
+
   NobleWills: {
     title: 'NobleWills',
     screenshot: {
