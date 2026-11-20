@@ -1,89 +1,103 @@
 .see-more {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 
-	.outer-eye {
-		width: 50%;
-		height: 50%;
-		background: white;
-		border-radius: 75% 0;
-		transform: rotate(45deg);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		overflow: hidden;
-		cursor: pointer;
-		box-shadow: 5px 5px 50px -18px rgba(0,0,0,0.8);
-		outline: none;
+  .outer-eye {
+    --gaze-x: 0px;
+    --gaze-y: 0px;
+    width: 70%;
+    height: 48%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-tap-highlight-color: transparent;
+    &:focus-visible { outline: 2px solid var(--color4); outline-offset: 8px; }
+  }
 
-		.iris {
-			position: relative;
-			width: 70%;
-			height: 70%;
-			border-radius: 50%;
-			background: var(--color4);
-			overflow: hidden;
+  .eye-surface {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 70% 30% 70% 30% / 70% 30% 70% 30%;
+    transform: rotate(12deg);
+    background: radial-gradient(ellipse at 45% 65%, #fffdf3 15%, #e7e2dc 60%, #96909c 100%);
+    box-shadow: inset 0 8px 12px #27234366, inset 0 -3px 6px #fff8, 0 12px 24px #100d2466, 0 1px 0 #d4b28b66;
+  }
 
-			.pupil {
-				position: absolute;
-				top: 30%;
-				left: 30%;
-				width: 40%;
-				height: 40%;
-				border-radius: 50%;
-				background: black;
-				display: flex;
-				justify-content: flex-end;
+  .iris {
+    position: relative;
+    width: 64%;
+    height: 94%;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: rotate(-12deg) translate(var(--gaze-x), var(--gaze-y));
+    background:
+      radial-gradient(circle, transparent 28%, #e6bd7755 35%, transparent 57%, #211b24 73%),
+      repeating-conic-gradient(#e6b77977 0deg 2deg, #49382866 3deg 5deg, transparent 6deg 9deg),
+      radial-gradient(circle, #5c4028 30%, var(--color4) 52%, #624b35 70%);
+    box-shadow: inset 0 0 0 2px #302632, inset 0 6px 10px #17101d99;
+  }
 
-				> * {
-					width: 40%;
-					height: 40%;
-					border-radius: 50%;
-					background: white;
-				}
-			}
-		}
+  .pupil {
+    position: absolute;
+    inset: 30%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 65% 75%, #1c1424, #030209 70%);
+    box-shadow: 0 0 4px 2px #c69b5b88;
+    transform: translate(calc(var(--gaze-x) * .18), calc(var(--gaze-y) * .18));
+    transition: scale 350ms ease;
+  }
 
-		.eye-lid {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			width: 150%;
-			height: 100%;
-			transform: translate(-50%, -50%) rotate(-45deg);
+  .reflection {
+    position: absolute;
+    inset: 8% 18% 22% 23%;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at 30% 24%, #fff 0%, #fff9 8%, transparent 25%), radial-gradient(ellipse at 72% 80%, #fff8, transparent 16%);
+    transform: rotate(-12deg) translate(calc(var(--gaze-x) * -.25), calc(var(--gaze-y) * -.25));
+    pointer-events: none;
+  }
 
-			&:after {
-				display: block;
-				content: "";
-				width: 100%;
-				height: 0;
-				border-radius: 0 0 50% 50%;
-				background: var(--color2);
-			}
-
-			&.shut {
-				&:after {
-					animation: close-and-open 600ms ease-in-out;
-
-					@keyframes close-and-open {
-					    0% {
-							height: 0;
-					    }
-					    50% {
-					    	height: 100%;
-					    }
-					    100% {
-							height: 0;
-					    }
-					}
-				}
-			}
-		}
-	}
+  .iris-sweep {
+    position: absolute;
+    inset: -40%;
+    background: linear-gradient(110deg, transparent 35%, #fff7 48%, transparent 60%);
+    opacity: 0;
+  }
+  .eye-lid {
+    position: absolute;
+    inset: -10%;
+    background: var(--color2);
+    transform: translateY(-100%);
+    border-radius: 0 0 45% 45%;
+  }
+  .blinking .eye-lid { animation: glass-blink 320ms ease-in-out; }
+  .shimmer .iris-sweep { animation: glass-sweep 600ms 300ms ease-out; }
+  .activated { outline: 2px solid var(--color4); outline-offset: 8px; }
+  @media (hover: hover) and (pointer: fine) {
+    .outer-eye:hover .pupil { scale: 1.12; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pupil { transition: none; scale: 1 !important; }
+  }
+  @keyframes glass-blink {
+    0%, 100% { transform: translateY(-100%); }
+    42%, 55% { transform: translateY(0); }
+  }
+  @keyframes glass-sweep {
+    0% { opacity: 0; transform: translateX(-65%); }
+    35% { opacity: .65; }
+    100% { opacity: 0; transform: translateX(65%); }
+  }
 
 	.more-line {
 		position: absolute;
