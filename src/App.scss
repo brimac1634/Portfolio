@@ -159,8 +159,8 @@ html[data-snapshot] {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .home { height: auto !important; white-space: normal; }
   .home-content { position: static; height: auto; max-width: 720px; margin: 0 auto; }
-  .home-gif { width: 80%; height: auto; margin: 140px auto 30px; }
-  .home-gif img { width: 100%; }
+  .home-illustration { width: 80%; height: auto; margin: 140px auto 30px; }
+  .home-illustration .assembling-system { width: 100%; }
   .carousel-item.show { transform: none; }
   .carousel-item-list .list-more { width: 200px; height: 200px; margin-top: 40px; }
   .header, .footer { animation: none; }

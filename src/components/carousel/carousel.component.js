@@ -6,8 +6,7 @@ import CarouselItem from '../carousel-item/carousel-item.component';
 import SocialButtons from '../social-buttons/social-buttons.component';
 import SeeMore from '../see-more/see-more.component';
 
-import portfolio_800 from '../../assets/portfolio_800.gif';
-import portfolio_500 from '../../assets/portfolio_500.gif';
+import AssemblingSystem from '../assembling-system/assembling-system.component';
 import './carousel.styles.scss';
 
 const Carousel = ({ children, height, setHeight, index, setIndex }) => {
@@ -50,16 +49,7 @@ const Carousel = ({ children, height, setHeight, index, setIndex }) => {
 			className='carousel'
 			style={{height}}
 		> 
-			<img 
-				style={{opacity}}
-				src={portfolio_800}
-				srcSet={
-					`${portfolio_500} 500w,
-					${portfolio_800} 800w`
-				} 
-				alt='Animated portfolio illustration'
-				className='port'
-			/>
+			<AssemblingSystem className='port' style={{ opacity }} />
 			<div className='message' style={{opacity}}>
 	        	<div className='oval'>
 	        		<div className='line'>

@@ -1,0 +1,34 @@
+.assembling-system {
+  pointer-events: none;
+  svg { display: block; width: 100%; height: auto; overflow: visible; }
+  path, ellipse { stroke-linejoin: round; }
+  text { fill: #c5b7cf; font-size: 12px; letter-spacing: 0.6px; text-anchor: middle; }
+  .scene-ground { fill: #302a48; opacity: 0.45; }
+  .object-shadow { fill: #1c1830; opacity: 0.5; }
+  .scene-connections { fill: none; stroke: #8d735c; stroke-width: 1.5; }
+  .face-left { fill: #443957; stroke: #82728f; }
+  .face-right { fill: #29233e; stroke: #82728f; }
+  .face-top { fill: #60516e; stroke: #b09bb8; animation: system-arrival 10s var(--active) infinite; }
+  .detail { fill: none; stroke: #c1a17e; stroke-width: 1.5; stroke-linecap: round; }
+  .core { fill: #9a7b5e; stroke: #e3bc8d; }
+  .screen { fill: #231d34; stroke: #ae94b6; }
+  .moving-signal { fill: #e3bc8d; opacity: 0; offset-anchor: 0px 0px; offset-position: 0px 0px; animation: system-flow 10s linear infinite; }
+  .return-signal { fill: #b6a0c3; }
+}
+@keyframes system-flow {
+  0% { offset-distance: var(--from); opacity: 0; }
+  1%, 7% { opacity: 1; }
+  8%, 100% { offset-distance: var(--to); opacity: 0; }
+}
+@keyframes system-arrival {
+  0%, 9%, 100% { fill: #60516e; }
+  2%, 5% { fill: #a1847d; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .assembling-system * { animation: none !important; }
+  .assembling-system .moving-signal { display: none; }
+}
+html[data-snapshot] .assembling-system {
+  * { animation: none !important; }
+  .moving-signal { display: none; }
+}

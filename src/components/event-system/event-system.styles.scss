@@ -1,0 +1,38 @@
+.event-system {
+  pointer-events: none;
+  svg { display: block; width: 100%; height: auto; overflow: visible; }
+  path { stroke-linejoin: round; }
+  text { fill: #c5b7cf; font-size: 12px; letter-spacing: 0.6px; text-anchor: middle; }
+  .event-ground { fill: #302a48; opacity: 0.45; }
+  .event-shadow { fill: #1c1830; opacity: 0.5; }
+  .event-wires { fill: none; stroke: #8d735c; stroke-width: 1.5; }
+  .event-left { fill: #443957; stroke: #82728f; }
+  .event-right { fill: #29233e; stroke: #82728f; }
+  .event-top { fill: #60516e; stroke: #b09bb8; }
+  .event-icon { fill: none; stroke: #c1a17e; stroke-width: 1.5; stroke-linecap: round; }
+  .event-bus-core { fill: #9a7b5e; stroke: #e3bc8d; animation: event-hub-glow 8s infinite; }
+  .event-consumer .event-top { animation: event-consumer-glow 8s infinite; }
+  .event-pulse { fill: #e3bc8d; offset-anchor: 0px 0px; offset-position: 0px 0px; opacity: 0; }
+  .event-inbound { animation: event-inbound-flow 8s linear infinite; }
+  .event-outbound { animation: event-outbound-flow 8s linear infinite; }
+}
+@keyframes event-inbound-flow {
+  0%, 5% { offset-distance: 0%; opacity: 0; }
+  7%, 24% { opacity: 1; }
+  25%, 100% { offset-distance: 100%; opacity: 0; }
+}
+@keyframes event-outbound-flow {
+  0%, 32% { offset-distance: 0%; opacity: 0; }
+  34%, 59% { opacity: 1; }
+  60%, 100% { offset-distance: 100%; opacity: 0; }
+}
+@keyframes event-hub-glow { 0%, 20%, 45%, 100% { fill: #9a7b5e; } 25%, 34% { fill: #efd0a0; } }
+@keyframes event-consumer-glow { 0%, 57%, 78%, 100% { fill: #60516e; } 61%, 67% { fill: #a1847d; } }
+@media (prefers-reduced-motion: reduce) {
+  .event-system * { animation: none !important; }
+  .event-system .event-pulse { display: none; }
+}
+html[data-snapshot] .event-system {
+  * { animation: none !important; }
+  .event-pulse { display: none; }
+}

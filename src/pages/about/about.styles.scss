@@ -1,10 +1,10 @@
 .about {
-  width: 65%;
+  width: 72%;
   max-width: 1200px;
   margin: 5% auto 80px;
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-  column-gap: 40px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  column-gap: 32px;
   animation: about-enter 400ms ease-out;
 
   .about-eyebrow {
@@ -45,17 +45,7 @@
     svg { display: block; width: 100%; height: auto; }
   }
 
-  .system-layer {
-    fill: rgba(255, 255, 255, 0.025);
-    stroke: #777087;
-    stroke-width: 1.3;
-    text { fill: #e5e0eb; stroke: none; font-size: 18px; letter-spacing: 1px; }
-  }
-  .system-connection { fill: none; stroke: #777087; stroke-width: 1.3; }
-  .system-junction { fill: #a27d57; }
-  .system-signal { fill: #e3bc8d; opacity: 0; animation: system-travel 10s ease-in-out 400ms infinite; }
-
-  .about-contact { grid-column: 1 / -1; max-width: 660px; margin-top: 24px; }
+  .about-contact { grid-column: 1; max-width: 660px; margin-top: 24px; }
   .interest { font-size: 21px; line-height: 1.6; letter-spacing: 0.3px; margin: 0 0 24px; }
   .contact-row {
     display: flex;
@@ -72,7 +62,7 @@
     width: 70%;
     margin-top: 160px;
     grid-template-columns: minmax(0, 1fr);
-    .about-system { width: 280px; max-width: 100%; justify-self: center; margin: 12px 0; }
+    .about-system { width: 520px; max-width: 100%; justify-self: center; margin: 12px 0; }
     .about-contact { margin-top: 12px; }
   }
   @media (max-width: 767px) {
@@ -83,16 +73,6 @@
 }
 
 @keyframes about-enter { from { opacity: 0; } to { opacity: 1; } }
-@keyframes system-travel {
-  0% { transform: translateY(0); opacity: 0; }
-  3% { opacity: 1; }
-  10.5% { transform: translateY(74px); opacity: 1; }
-  12%, 16.5% { opacity: 0; }
-  16.8% { transform: translateY(148px); opacity: 0; }
-  19.5% { opacity: 1; }
-  28.5% { transform: translateY(222px); opacity: 1; }
-  30%, 100% { transform: translateY(222px); opacity: 0; }
-}
 @media (prefers-reduced-motion: reduce) {
   .about, .about *, .about *::before, .about *::after {
     animation: none !important;
